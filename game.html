@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Details - ROM Central</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+        transition: background-color 0.3s, color 0.3s;
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    /* Main container for content */
+    .content-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+        flex: 1;
+    }
+
+    /* Game details section */
+    .game-details {
+        background: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-bottom: 20px;
+    }
+
+    .game-title {
+        font-size: 2em;
+        font-weight: bold;
+        margin-top: 20px;
+        color: #333;
+    }
+
+    .game-info {
+        font-size: 1.2em;
+        color: #555;
+        margin: 10px 0;
+    }
+
+    .game-description {
+        text-align: left;
+        font-size: 1em;
+        color: #333;
+        margin-top: 20px;
+    }
+
+    /* Game cover and overlay */
+    .game-cover-container {
+        position: relative;
+        display: inline-block;
+        max-width: 300px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .game-cover {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .game-cover-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .game-cover-container:hover .game-cover-overlay {
+        opacity: 1;
+    }
+
+    .download-btn {
+        padding: 15px 30px;
+        background-color: #4563a0;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 1.2em;
+        margin-top: 20px;
+        transition: background-color 0.3s;
+    }
+
+    .download-btn:hover {
+        background-color: #4550a0;
+    }
+
+    /* Related games section - smaller layout */
+    .related-section {
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+    }
+
+    .related-section h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        color: #333;
+        text-align: center;
+    }
+
+    /* Grid layout for related games - smaller cards */
+    .related-games {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        gap: 10px;
+        justify-items: center;
+    }
+
+    .related-game-card {
+        width: 100%;
+        text-align: center;
+        background: #f9f9f9;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .related-game-card:hover {
+        transform: scale(1.05);
+    }
+
+    .related-game-card img {
+        width: 100%;
+        height: 80px;
+        object-fit: cover;
+    }
+
+    .related-game-card h3 {
+        margin: 10px 0;
+        font-size: 0.9em;
+        color: #333;
+        padding: 0 5px;
+    }
+
+    .platform-badge {
+        font-size: 0.7em;
+        color: #666;
+        margin: 5px 0;
+        padding: 0 5px;
+    }
+
+    /* Ad banner - positioned below related games */
+    .ad-banner {
+        background-color: #333;
+        color: #fff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1em;
+        text-align: center;
+        width: 90%;
+        height: 90px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+        border-radius: 8px;
+    }
+
+    .ad-banner a {
+        color: #fff;
+        text-decoration: none;
+        font-weight: bold;
+    }
+
+    .ad-banner p {
+        width: 100%;
+        font-size: 1.1em;
+        text-align: center;
+    }
+
+    /* Loading spinner */
+    .loading {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid rgba(0, 0, 0, .3);
+        border-radius: 50%;
+        border-top-color: #000;
+        animation: spin 1s ease-in-out infinite;
+        margin-right: 10px;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Donate button */
+    .donate-btn {
+        display: inline-block;
+        padding: 10px 20px;
+        background-color: #ff9800;
+        color: white;
+        text-decoration: none;
+        font-size: 1em;
+        margin-top: 10px;
+        border-radius: 4px;
+        transition: background-color 0.3s;
+    }
+
+    .donate-btn:hover {
+        background-color: #e68900;
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+        .game-cover-container {
+            max-width: 200px;
+        }
+
+        .game-title {
+            font-size: 1.5em;
+        }
+
+        .game-info {
+            font-size: 1em;
+        }
+
+        .download-btn {
+            padding: 12px 20px;
+            font-size: 1em;
+        }
+
+        .related-games {
+            grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+            gap: 8px;
+        }
+
+        .related-game-card img {
+            height: 70px;
+        }
+
+        .related-game-card h3 {
+            font-size: 0.8em;
+        }
+
+        .ad-banner {
+            height: 80px;
+            font-size: 0.9em;
+        }
+		
+    }
+		    .footer-links {
+            margin-bottom: 15px;
+        }
+        .footer-links a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body class="light-mode">
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="ROM Central Logo" class="logo">
+        </a>
+        <button id="theme-toggle"></button>
+    </header>
+    
+    <main class="content-container">
+        <div class="game-details" id="game-details">
+            <div class="loading">Loading game details...</div>
+        </div>
+
+        <div class="related-section">
+            <h2>Related Games</h2>
+            <div class="related-games" id="related-games-list">
+                <!-- Related games will be dynamically injected here -->
+            </div>
+			        <div class="ad-banner">
+            <p>Sponsored Ad - <a href="https://example.com" target="_blank">Check this out!</a></p>
+        </div>
+        </div>
+        
+        <!-- Ad banner now properly positioned below related games -->
+
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+        <p>&copy; 2025 ROM Central</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", async () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const gameId = urlParams.get("id");
+            if (!gameId) {
+                document.getElementById("game-details").innerHTML = '<p class="error-message">No game selected.</p>';
+                return;
+            }
+
+            try {
+                const gameResponse = await fetch(`http://localhost:3000/games/${gameId}`);
+                if (!gameResponse.ok) throw new Error('Game not found');
+                const game = await gameResponse.json();
+                displayGameDetails(game);
+                
+                const allGamesResponse = await fetch("http://localhost:3000/all-games");
+                const allGames = await allGamesResponse.json();
+                displayRelatedGames(allGames, game);
+            } catch (error) {
+                document.getElementById("game-details").innerHTML = `<p class="error-message">${error.message}</p>`;
+            }
+        });
+
+        function displayGameDetails(game) {
+            document.getElementById("game-details").innerHTML = `
+                <div class="game-cover-container">
+                    <img src="${game.cover}" alt="${game.title}" class="game-cover" 
+                         onerror="this.src='https://via.placeholder.com/250?text=No+Image'">
+                    <div class="game-cover-overlay"></div>
+                </div>
+                <h1 class="game-title">${game.title}</h1>
+                <p class="game-info"><strong>Platform:</strong> ${game.platform}</p>
+                <p class="game-info"><strong>Genre:</strong> ${game.genre?.join(", ") || "Unknown"}</p>
+                <p class="game-description">${game.description || 'No description available'}</p>
+                <a href="${game.download}" class="download-btn" target="_blank">Download ROM</a>
+                <br>
+                <br>
+                <a href="contact-us.html" class="donate-btn" target="_blank">Donate</a>
+            `;
+        }
+
+        function displayRelatedGames(allGames, currentGame) {
+            const relatedGamesContainer = document.getElementById("related-games-list");
+            
+            // First filter games by same genre (if available)
+            let sameGenreGames = [];
+            if (currentGame.genre && currentGame.genre.length > 0) {
+                sameGenreGames = allGames.filter(game => 
+                    game.id !== currentGame.id && 
+                    game.genre && 
+                    game.genre.some(g => currentGame.genre.includes(g))
+                ).sort(() => Math.random() - 0.5);
+            }
+            
+            // Then filter games by same platform (excluding current game)
+            let samePlatformGames = allGames.filter(game => 
+                game.id !== currentGame.id && 
+                game.platform === currentGame.platform &&
+                !sameGenreGames.some(g => g.id === game.id)
+            ).sort(() => Math.random() - 0.5);
+            
+            // Get random games from other platforms
+            let otherGames = allGames.filter(game => 
+                game.id !== currentGame.id && 
+                game.platform !== currentGame.platform &&
+                !sameGenreGames.some(g => g.id === game.id)
+            ).sort(() => Math.random() - 0.5);
+            
+            // Combine the results with priority:
+            // 1. Same genre games (max 2)
+            // 2. Same platform games (max 2)
+            // 3. Random other games (fill to 6 total)
+            const relatedGames = [
+                ...sameGenreGames.slice(0, 2),
+                ...samePlatformGames.slice(0, 2),
+                ...otherGames.slice(0, 6 - Math.min(sameGenreGames.length, 2) - Math.min(samePlatformGames.length, 2))
+            ].sort(() => Math.random() - 0.5);
+            
+            if (relatedGames.length === 0) {
+                relatedGamesContainer.innerHTML = '<p>No related games found</p>';
+                return;
+            }
+
+            relatedGamesContainer.innerHTML = relatedGames.map(game => `
+                <div class="related-game-card">
+                    <a href="game.html?id=${game.id}">
+                        <img src="${game.cover}" alt="${game.title}" 
+                             onerror="this.src='https://via.placeholder.com/150?text=No+Image'">
+                        <h3>${game.title}</h3>
+                        <p class="platform-badge">${game.platform}</p>
+                    </a>
+                </div>
+            `).join('');
+        }
+    </script>
+</body>
+</html>

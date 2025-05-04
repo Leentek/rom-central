@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>ePSXe - PlayStation (PSX/PS1) Emulator Setup Guide | ROM Central</title>
+    <meta name="description" content="Download and set up the ePSXe emulator for PC (Windows/Linux) and Android. Play PlayStation 1 games - requires PS1 BIOS file and PC plugins.">
+    <meta name="keywords" content="ePSXe download, PlayStation emulator, PS1 emulator, PSX emulator, ePSXe setup, PS1 BIOS required, ePSXe plugins, play PS1 games, ePSXe Android, ePSXe PC">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="YOUR_EPSXE_PAGE_URL"> <meta property="og:title" content="ePSXe - PlayStation (PSX/PS1) Emulator Setup Guide | ROM Central">
+    <meta property="og:description" content="Guide to setting up the ePSXe PS1 emulator on PC (with plugins) and Android. Requires an official PS1 BIOS file.">
+    <meta property="og:image" content="YOUR_EPSXE_PREVIEW_IMAGE.jpg"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="YOUR_EPSXE_PAGE_URL"> <meta property="twitter:title" content="ePSXe - PlayStation (PSX/PS1) Emulator Setup Guide | ROM Central">
+    <meta property="twitter:description" content="Guide to setting up the ePSXe PS1 emulator on PC (with plugins) and Android. Requires an official PS1 BIOS file.">
+    <meta property="twitter:image" content="YOUR_EPSXE_PREVIEW_IMAGE.jpg"> <link rel="canonical" href="YOUR_EPSXE_PAGE_URL"> <link rel="icon" href="/favicon.ico" type="image/x-icon"> <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Install and Set Up ePSXe (PlayStation Emulator)",
+      "description": "Guide to installing ePSXe on PC (including plugins) and Android, requiring a PlayStation BIOS file.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Obtain Requirements",
+          "itemListElement": [
+             {"@type": "HowToStep", "name": "Download ePSXe", "text": "Get the latest ePSXe version for your platform (PC: Windows/Linux; Android: Paid App) from the official ePSXe website.", "url": "YOUR_EPSXE_PAGE_URL#download"},
+             {"@type": "HowToStep", "name": "Obtain PS1 BIOS", "text": "ePSXe REQUIRES a PlayStation BIOS file (e.g., 'scph1001.bin', 'scph7502.bin'). You must legally obtain this from your own PS1 console."},
+             {"@type": "HowToStep", "name": "Download Plugins (PC Only)", "text": "For PC, download separate GPU (graphics), SPU (sound), and CDR (CD-ROM) plugins. Search for reputable sources for common plugins like Pete's OpenGL2/D3D, P.E.Op.S. SPU, or ePSXe's own CDR plugin."}
+            ]
+        },
+        {
+          "@type": "HowToSection",
+          "name": "PC Setup",
+          "itemListElement": [
+            {"@type": "HowToStep", "name": "Extract & Organize Files", "text": "Extract the ePSXe archive. Create 'bios' and 'plugins' subfolders inside the main ePSXe folder. Place your downloaded BIOS file(s) in the 'bios' folder and plugin files (.dll) in the 'plugins' folder."},
+            {"@type": "HowToStep", "name": "Run & Configure ePSXe", "text": "Launch ePSXe.exe. Use the 'Config' > 'Wizard Guide' for initial setup or manually go through 'Config' menu items:"},
+            {"@type": "HowToStep", "name": "Select BIOS", "text": "Go to 'Config' > 'BIOS'. Browse to and select your BIOS file in the 'bios' folder."},
+            {"@type": "HowToStep", "name": "Configure Plugins", "text": "Go to 'Config' > 'Video', 'Sound', 'Cdrom'. Select the plugins you placed in the 'plugins' folder. Click 'Configure' for each to adjust settings (resolution, sound quality, drive letter etc.)."},
+            {"@type": "HowToStep", "name": "Configure Input", "text": "Go to 'Config' > 'Game Pads' > 'Port 1'. Select your controller type and map the PS1 buttons."},
+            {"@type": "HowToStep", "name": "Load Game", "text": "Use 'File' > 'Run ISO' to load a game image (ISO, BIN/CUE, IMG, PBP, CHD) or 'File' > 'Run CDROM' to play from a physical disc (requires correct CDR plugin setup)."}
+          ]
+        },
+        {
+          "@type": "HowToSection",
+          "name": "Android Setup",
+          "itemListElement": [
+             {"@type": "HowToStep", "name": "Purchase & Install", "text": "Buy and install 'ePSXe for Android' from the Google Play Store."},
+             {"@type": "HowToStep", "name": "Place BIOS", "text": "Place your legally obtained PS1 BIOS file(s) in the location specified by the app (usually Internal Storage > 'epsxe' > 'bios'). Check Preferences > 'Bios File' path if unsure."},
+             {"@type": "HowToStep", "name": "Configure ePSXe", "text": "Launch the app. Go to 'Preferences'. Select your 'Bios File'. Configure 'Video Preferences' (screen ratio, renderer), 'Input Preferences' (map touchscreen or gamepad), and other settings."},
+             {"@type": "HowToStep", "name": "Load Game", "text": "Tap 'Run Game'. ePSXe will scan for game images on your device. Select a game to start."}
+            ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="styles.css"> <script defer src="script.js"></script> <style>
+        /* Using refined styles, PS1 grey theme */
+        html, body { height: 100%; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        header { /* Add header styles if needed from styles.css */ }
+        nav { /* Add nav styles if needed from styles.css */ }
+        nav ul { list-style: none; padding: 0; margin: 0; text-align: center; /* Example */ /* Add more nav styles */ }
+        nav li { display: inline-block; /* Example */ margin: 0 15px; /* Example */ /* Add more nav styles */ }
+        nav a { text-decoration: none; color: #007bff; /* Example */ /* Add nav link styles */ }
+        nav a:hover, nav a[aria-current="page"] { text-decoration: underline; font-weight: bold; /* Example */ }
+
+        main { padding: 20px; max-width: 1200px; margin: 0 auto; padding-bottom: 80px; /* Ensure footer doesn't overlap content */ }
+        h1 { color: #a1a1a1; /* PS1 Grey */ text-align: center; margin-bottom: 30px; font-size: 2.2em; }
+        h2 { color: #333; border-bottom: 2px solid #a1a1a1; /* PS1 Grey */ padding-bottom: 5px; margin-top: 40px; }
+        section { margin-bottom: 50px; background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .important-note { background-color: #fff3cd; border-left: 5px solid #ffeeba; padding: 10px; margin-bottom: 20px; } /* Style for BIOS/Plugin note */
+         .video-container { position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0; overflow: hidden; max-width: 100%; background: #000; margin: 20px auto; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .download-button { display: inline-block; background-color: #a1a1a1; /* PS1 Grey */ color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; transition: background-color 0.3s; border: none; cursor: pointer; }
+        .download-button:hover { background-color: #888888; /* Darker Grey */ }
+        ol { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        #faq h3 { margin-top: 25px; color: #444; }
+
+        footer { background-color: #333; color: white; text-align: center; padding: 15px 10px; position: relative; bottom: 0; width: 100%; margin-top: 40px; box-sizing: border-box; }
+        .footer-links { margin-bottom: 10px; }
+        .footer-links a { color: #fff; margin: 0 10px; text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; }
+
+        .ad-banner-left, .ad-banner-right { position: fixed; background-color: #333; color: white; padding: 10px; font-size: 1.2em; border-radius: 8px; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .ad-banner-left { bottom: 20px; left: 20px; writing-mode: vertical-rl; transform: rotate(180deg); }
+        #adBannerLeft button { position: absolute; top: -5px; right: -25px; background: #555; color: white; border: none; border-radius: 50%; cursor: pointer; font-size: 0.8em; width: 20px; height: 20px; line-height: 20px; text-align: center; transform: rotate(180deg); writing-mode: horizontal-tb; }
+        .ad-banner-right { bottom: 20px; right: 20px; }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-container" aria-label="ROM Central Home">
+            <img src="logo.png" alt="ROM Central Logo" class="logo"> </a>
+        <button id="theme-toggle" aria-label="Toggle theme"></button>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="roms.html">ROMs</a></li>
+            <li><a href="emulators.html" aria-current="page">Emulators</a></li> <li><a href="bios.html">Mobile Games</a></li>
+            <li><a href="rom-packs.html">ROM Packs</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>ePSXe - PlayStation (PSX/PS1) Emulator Setup Guide</h1>
+
+        <div class="important-note">
+            <strong>Important Requirements:</strong><br>
+            1. ePSXe <strong>requires a PlayStation 1 BIOS file</strong> (e.g., <code>scph1001.bin</code>) obtained legally from your own console.<br>
+            2. The PC version <strong>requires separate GPU, SPU, and CDR plugin files</strong> to be downloaded and configured.
+        </div>
+
+        <section id="pc-installation">
+            <h2>PC Setup Guide (Windows / Linux)</h2>
+             <p>ePSXe for PC relies on external plugins for rendering graphics, sound, and handling CD drives.</p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="ACTUAL_YOUTUBE_EMBED_URL_EPSXE_PC" title="ePSXe PC Installation & Setup Tutorial (including Plugins and BIOS)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <ol>
+                <li><strong>Download ePSXe</strong> - Get the latest version for your OS from the official ePSXe website (epsxe.com).</li>
+                <li><strong>Download Plugins</strong> - You need GPU, SPU, and CDR plugins. Search online for reputable sources like Pete Bernert's website (historical) or emulation plugin archives. Common choices include:
+                    <ul><li>**GPU:** Pete's OpenGL2 Driver, Pete's D3D Driver</li><li>**SPU:** P.E.Op.S. SPU, Eternal SPU Plugin</li><li>**CDR:** ePSXe CDR WNT/W2K core, Pete's CDR Driver</li></ul>
+                </li>
+                 <li><strong>Extract & Organize</strong> - Extract the ePSXe archive into a folder. Inside that folder, create two new folders: `bios` and `plugins`. Extract/place the downloaded plugin files (`.dll` on Windows) into the `plugins` folder.</li>
+                <li><strong>Obtain & Place BIOS</strong> - Acquire your PS1 BIOS file legally (e.g., `scph1001.bin`). Place it inside the `bios` folder you created.</li>
+                <li><strong>Run & Configure ePSXe</strong> - Launch `ePSXe.exe`. Use the `Config` > `Wizard Guide` for easy first-time setup, or configure manually:
+                    <ul>
+                        <li>`Config` > `Bios`: Click `Select...` and choose your BIOS file from the `bios` folder.</li>
+                        <li>`Config` > `Video`: Select your chosen GPU plugin (e.g., Pete's OpenGL2). Click `Configure` to set resolution, texture filtering, etc.</li>
+                        <li>`Config` > `Sound`: Select your SPU plugin and click `Configure`.</li>
+                        <li>`Config` > `Cdrom`: Select your CDR plugin and configure if necessary.</li>
+                        <li>`Config` > `Game Pads` > `Port 1` > `Pad 1`: Select controller type (e.g., DualShock) and map buttons for your keyboard or gamepad.</li>
+                    </ul>
+                </li>
+                <li><strong>Load Game</strong> - Use `File` > `Run ISO` to load a game image from your hard drive (common formats: ISO, BIN/CUE, IMG, PBP, ECM, CHD). Or use `File` > `Run CDROM` if playing from a physical disc (requires CDR plugin setup).</li>
+            </ol>
+            <p><strong>System Requirements (PC):</strong> Generally low for basic PS1 emulation. A dual-core CPU and any graphics card supporting the chosen GPU plugin (OpenGL 2.0+ or DirectX 9+) should work. Higher resolutions or advanced plugin features may require more power.</p>
+            <a href="https://www.epsxe.com/download.php" class="download-button" id="epsxe-pc-download">Download ePSXe for PC</a> </section>
+
+        <section id="android-installation">
+            <h2>Android Setup Guide</h2>
+             <p>ePSXe for Android is a paid application available on the Google Play Store. It simplifies plugin handling compared to the PC version but still requires a BIOS file.</p>
+            <div class="video-container">
+                 <iframe width="560" height="315" src="ACTUAL_YOUTUBE_EMBED_URL_EPSXE_ANDROID" title="ePSXe for Android Installation & Setup Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+             <ol>
+                <li><strong>Purchase & Install ePSXe</strong> - Buy and install 'ePSXe for Android' from the Google Play Store.</li>
+                <li><strong>Obtain & Place BIOS</strong> - Acquire your PS1 BIOS file legally. Create a folder named `epsxe` in your device's internal storage, and inside that, create a folder named `bios`. Place the BIOS file (e.g., `scph1001.bin`) into this `Internal Storage/epsxe/bios/` folder using a file manager app.</li>
+                <li><strong>Launch & Configure</strong> - Open the ePSXe app. It should automatically detect the BIOS if placed correctly. If not, go to `Preferences` > `Bios File` and manually select it.</li>
+                <li><strong>Adjust Preferences</strong> - Explore `Preferences`:
+                    <ul>
+                        <li>`CPU Preferences`: Adjust CPU frameskip if needed (usually not).</li>
+                        <li>`Video Preferences`: Choose screen orientation, aspect ratio, video renderer (Hardware or Software).</li>
+                        <li>`Input Preferences`: Configure touch screen controls (Player 1 -> `Touchscreen gamepad`), map a physical gamepad, or adjust settings.</li>
+                     </ul>
+                </li>
+                <li><strong>Load Game</strong> - Tap `Run Game`. ePSXe will scan your device storage for compatible game images (ISO, BIN, PBP, etc.). Tap the game you want to play from the list.</li>
+            </ol>
+            <p><strong>System Requirements (Android):</strong> Relatively lightweight. Most modern Android devices (Android 4.0+) should run ePSXe well. Performance depends more on the specific game and chosen settings.</p>
+             <a href="https://www.epsxe.com/download.php" class="download-button" id="epsxe-android-download">Get ePSXe for Android (Play Store)</a> </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <h3>Is the PS1 BIOS file really mandatory for ePSXe?</h3>
+            <p>Yes. Unlike some emulators with High-Level Emulation (HLE) options, ePSXe strictly requires an official Sony PlayStation BIOS file (dumped legally from your own console) to function.</p>
+
+            <h3>Where do I get plugins for ePSXe on PC?</h3>
+            <p>ePSXe doesn't bundle plugins. You need to download them separately. Historically, Pete Bernert's website was a primary source. You can search online forums and emulation sites for reputable plugin downloads (e.g., Pete's OpenGL2/D3D, P.E.Op.S SPU, various CDR plugins).</p>
+
+            <h3>Is the Android version of ePSXe free?</h3>
+            <p>No, ePSXe for Android is a paid application on the Google Play Store. There is no official free version.</p>
+
+            <h3>How does ePSXe compare to DuckStation or Beetle PSX?</h3>
+            <p>ePSXe is an older, established emulator known for its compatibility and performance, relying on a plugin system for PC. DuckStation and Beetle PSX (Mednafen core often used in RetroArch) are more modern, often open-source alternatives focusing on high accuracy, built-in features (no external plugins needed), and advanced options like PGXP geometry correction. Many users now prefer DuckStation for its ease of use and accuracy.</p>
+             <h3>What game formats does ePSXe support?</h3>
+             <p>ePSXe typically supports ISO, BIN/CUE, IMG, PBP (PSP eboot format for PS1 games), ECM (compressed format requiring unecm tool), and sometimes CHD (compressed format).</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+        </div>
+        <p>&copy; 2025 ROM Central.</p>
+    </footer>
+
+
+    <div class="ad-banner-right" aria-label="Advertisement">Ad Space</div>
+
+    <script>
+        // Ad dismissal script
+        const dismissButton = document.getElementById('dismissAdButton');
+        if (dismissButton) {
+            dismissButton.addEventListener('click', function() {
+                const adBannerLeft = document.getElementById('adBannerLeft');
+                if (adBannerLeft) {
+                    adBannerLeft.classList.add('hidden');
+                }
+            });
+        }
+
+        // Placeholder for theme toggle or other JS from script.js
+        const themeToggleButton = document.getElementById('theme-toggle');
+        if (themeToggleButton) {
+             themeToggleButton.textContent = ''; // Example
+             // Add theme toggle logic here
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>DuckStation - Accurate PSX/PS1 Emulator Setup Guide | ROM Central</title>
+    <meta name="description" content="Download and set up DuckStation, a modern PlayStation (PSX/PS1) emulator focused on accuracy and features for PC (Windows, Linux, Mac) and Android. Requires PS1 BIOS file.">
+    <meta name="keywords" content="DuckStation download, PlayStation emulator, PS1 emulator, PSX emulator, DuckStation setup, PS1 BIOS required, accurate PS1 emulation, PGXP, DuckStation Android, DuckStation PC">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="YOUR_DUCKSTATION_PAGE_URL"> <meta property="og:title" content="DuckStation - Accurate PSX/PS1 Emulator Setup Guide | ROM Central">
+    <meta property="og:description" content="Setup guide for the DuckStation PS1 emulator on PC and Android. Focuses on accuracy, features like PGXP, and requires a PS1 BIOS file.">
+    <meta property="og:image" content="YOUR_DUCKSTATION_PREVIEW_IMAGE.jpg"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="YOUR_DUCKSTATION_PAGE_URL"> <meta property="twitter:title" content="DuckStation - Accurate PSX/PS1 Emulator Setup Guide | ROM Central">
+    <meta property="twitter:description" content="Setup guide for the DuckStation PS1 emulator on PC and Android. Focuses on accuracy, features like PGXP, and requires a PS1 BIOS file.">
+    <meta property="twitter:image" content="YOUR_DUCKSTATION_PREVIEW_IMAGE.jpg"> <link rel="canonical" href="YOUR_DUCKSTATION_PAGE_URL"> <link rel="icon" href="/favicon.ico" type="image/x-icon"> <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Install and Set Up DuckStation (PlayStation Emulator)",
+      "description": "Guide to installing the DuckStation PS1 emulator on PC and Android, including BIOS setup and configuration.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Obtain Requirements",
+          "itemListElement": [
+            {"@type": "HowToStep", "name": "Download DuckStation", "text": "Get the latest version for your platform (PC: Windows, Linux, macOS; Android) from the official DuckStation GitHub releases page.", "url": "YOUR_DUCKSTATION_PAGE_URL#download"},
+            {"@type": "HowToStep", "name": "Obtain PS1 BIOS", "text": "DuckStation REQUIRES PlayStation BIOS files (e.g., 'scph5500.bin', 'scph5501.bin', 'scph5502.bin' for NTSC-U/PAL/NTSC-J respectively). You must legally obtain these from your own PS1 console."}
+           ]
+        },
+        {
+          "@type": "HowToSection",
+          "name": "PC Setup (Windows, Linux, macOS)",
+          "itemListElement": [
+            {"@type": "HowToStep", "name": "Extract DuckStation", "text": "Extract the downloaded archive into a dedicated folder."},
+            {"@type": "HowToStep", "name": "Place BIOS Files", "text": "Create a 'bios' subfolder within your DuckStation directory. Place your legally obtained PS1 BIOS files inside this 'bios' folder."},
+            {"@type": "HowToStep", "name": "Run & Initial Setup", "text": "Launch the DuckStation executable. A first-time setup wizard will guide you through selecting language, theme, confirming the BIOS path, and adding your game directory (where your PS1 ROMs are stored)."},
+            {"@type": "HowToStep", "name": "Configure Settings", "text": "Go to 'Settings'. Key areas: 'Display Settings' (Renderer: Vulkan/D3D/OpenGL/Metal, Aspect Ratio), 'Enhancement Settings' (Internal Resolution Scale, Texture Filtering, PGXP Geometry Correction), 'Controller Settings' (map gamepad/keyboard)."},
+            {"@type": "HowToStep", "name": "Load Game", "text": "Your games should appear in the main window's game list after adding the directory. Double-click a game to start."}
+          ]
+        },
+        {
+          "@type": "HowToSection",
+          "name": "Android Setup",
+          "itemListElement": [
+            {"@type": "HowToStep", "name": "Install DuckStation", "text": "Install the DuckStation app from the Google Play Store or download the APK from the GitHub releases page (enable 'Install unknown apps' if needed)."},
+            {"@type": "HowToStep", "name": "Place BIOS Files", "text": "Place your legally obtained PS1 BIOS files in a location accessible by the app. The app will ask you to specify the BIOS directory during initial setup or via Settings > App Settings > BIOS Path."},
+            {"@type": "HowToStep", "name": "Initial Setup & Permissions", "text": "Launch DuckStation. Grant storage permissions. Follow the setup prompts to select the BIOS directory and add your game directory."},
+            {"@type": "HowToStep", "name": "Configure Settings", "text": "Access app settings. Key areas: 'Graphics Settings' (Renderer, Upscale Multiplier), 'Enhancement Settings' (PGXP, Filtering), 'Control Settings' (Touchscreen overlay, Controller mapping)."},
+            {"@type": "HowToStep", "name": "Load Game", "text": "Games from your added directory will appear in the main list. Tap a game to launch it."}
+           ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="styles.css"> <script defer src="script.js"></script> <style>
+        /* Using refined styles, PS1 grey theme */
+        html, body { height: 100%; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        header { /* Add header styles if needed from styles.css */ }
+        nav { /* Add nav styles if needed from styles.css */ }
+        nav ul { list-style: none; padding: 0; margin: 0; text-align: center; /* Example */ /* Add more nav styles */ }
+        nav li { display: inline-block; /* Example */ margin: 0 15px; /* Example */ /* Add more nav styles */ }
+        nav a { text-decoration: none; color: #007bff; /* Example */ /* Add nav link styles */ }
+        nav a:hover, nav a[aria-current="page"] { text-decoration: underline; font-weight: bold; /* Example */ }
+
+        main { padding: 20px; max-width: 1200px; margin: 0 auto; padding-bottom: 80px; /* Ensure footer doesn't overlap content */ }
+        h1 { color: #a1a1a1; /* PS1 Grey */ text-align: center; margin-bottom: 30px; font-size: 2.2em; }
+        h2 { color: #333; border-bottom: 2px solid #a1a1a1; /* PS1 Grey */ padding-bottom: 5px; margin-top: 40px; }
+        section { margin-bottom: 50px; background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .important-note { background-color: #fff3cd; border-left: 5px solid #ffeeba; padding: 10px; margin-bottom: 20px; } /* Style for BIOS note */
+        .feature-note { background-color: #d1ecf1; border-left: 5px solid #bee5eb; padding: 10px; margin-bottom: 20px; } /* Style for feature note */
+         .video-container { position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0; overflow: hidden; max-width: 100%; background: #000; margin: 20px auto; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .download-button { display: inline-block; background-color: #a1a1a1; /* PS1 Grey */ color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; transition: background-color 0.3s; border: none; cursor: pointer; }
+        .download-button:hover { background-color: #888888; /* Darker Grey */ }
+        ol { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        #faq h3 { margin-top: 25px; color: #444; }
+
+        footer { background-color: #333; color: white; text-align: center; padding: 15px 10px; position: relative; bottom: 0; width: 100%; margin-top: 40px; box-sizing: border-box; }
+        .footer-links { margin-bottom: 10px; }
+        .footer-links a { color: #fff; margin: 0 10px; text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; }
+
+        .ad-banner-left, .ad-banner-right { position: fixed; background-color: #333; color: white; padding: 10px; font-size: 1.2em; border-radius: 8px; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .ad-banner-left { bottom: 20px; left: 20px; writing-mode: vertical-rl; transform: rotate(180deg); }
+        #adBannerLeft button { position: absolute; top: -5px; right: -25px; background: #555; color: white; border: none; border-radius: 50%; cursor: pointer; font-size: 0.8em; width: 20px; height: 20px; line-height: 20px; text-align: center; transform: rotate(180deg); writing-mode: horizontal-tb; }
+        .ad-banner-right { bottom: 20px; right: 20px; }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-container" aria-label="ROM Central Home">
+            <img src="logo.png" alt="ROM Central Logo" class="logo"> </a>
+        <button id="theme-toggle" aria-label="Toggle theme"></button>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="roms.html">ROMs</a></li>
+            <li><a href="emulators.html" aria-current="page">Emulators</a></li> <li><a href="bios.html">Mobile Games</a></li>
+            <li><a href="rom-packs.html">ROM Packs</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>DuckStation - Accurate PlayStation (PSX/PS1) Emulator</h1>
+
+        <div class="important-note">
+            <strong>Important:</strong> DuckStation <strong>requires PlayStation 1 BIOS files</strong> to function. You must legally obtain these from your own console (e.g., `scph5501.bin` for USA). Place them in the 'bios' folder within your DuckStation directory or where prompted during setup.
+        </div>
+         <div class="feature-note">
+            <strong>Note:</strong> DuckStation focuses on accuracy and modern features. It has built-in graphics/sound/input handling, so **no external plugins are needed** like with older emulators (e.g., ePSXe). It supports features like resolution upscaling, PGXP geometry correction (fixes polygon wobble), texture filtering, and more.
+        </div>
+
+        <section id="pc-installation">
+            <h2>PC Setup Guide (Windows, Linux, macOS)</h2>
+             <p>DuckStation offers a modern and feature-rich PS1 emulation experience on desktop platforms.</p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="ACTUAL_YOUTUBE_EMBED_URL_DUCK_PC" title="DuckStation PC Installation & Setup Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <ol>
+                <li><strong>Download DuckStation</strong> - Get the latest stable or preview build for your OS from the official DuckStation GitHub releases page.</li>
+                <li><strong>Extract Files</strong> - Extract the downloaded archive (`.zip`, `.tar.xz`) into a dedicated folder.</li>
+                <li><strong>Obtain & Place BIOS</strong> - Acquire your PS1 BIOS files legally. Create a `bios` subfolder inside your DuckStation folder and place the BIOS files (e.g., `scph5500.bin`, `scph5501.bin`, `scph5502.bin`) inside it.</li>
+                <li><strong>Run & Initial Setup</strong> - Launch the DuckStation executable. A first-time setup wizard should appear:
+                    <ul>
+                        <li>Select Language & Theme.</li>
+                        <li>Confirm or browse to your `bios` folder path.</li>
+                        <li>Click `Add Game Directory` and select the folder(s) containing your PS1 game images (BIN/CUE, ISO, IMG, PBP, CHD, MDF/MDS).</li>
+                    </ul>
+                </li>
+                <li><strong>Configure Settings (Optional)</strong> - Access `Settings` from the menu bar:
+                    <ul>
+                        <li>`Display Settings`: Choose Renderer (Vulkan, D3D11/12, OpenGL, Metal), Aspect Ratio, VSync.</li>
+                        <li>`Enhancement Settings`: Set Internal Resolution Scale (e.g., 3x for 1080p), Texture Filtering, Widescreen Hack, and enable PGXP options (Geometry Correction, Culling Correction, Texture Correction) for improved visuals.</li>
+                        <li>`Controller Settings`: Select controller type (e.g., DualShock), choose your device, and map buttons automatically or manually.</li>
+                    </ul>
+                </li>
+                <li><strong>Load Game</strong> - Your scanned games will appear in the main window list. Double-click a game to start playing.</li>
+            </ol>
+            <p><strong>System Requirements (PC):</strong> Relatively lightweight for native resolution. A CPU from the last decade and integrated graphics should suffice. However, using enhancements like resolution scaling (3x+) and PGXP requires a more capable, modern graphics card (supporting Vulkan/D3D11+/OpenGL 3.1+).</p>
+            <a href="https://duckstation.org/" class="download-button" id="duckstation-pc-download">Download DuckStation for PC (GitHub)</a> </section>
+
+        <section id="android-installation">
+            <h2>Android Setup Guide</h2>
+             <p>DuckStation provides an excellent, feature-rich PS1 experience on Android devices.</p>
+            <div class="video-container">
+                 <iframe width="560" height="315" src="ACTUAL_YOUTUBE_EMBED_URL_DUCK_ANDROID" title="DuckStation Android Installation & Setup Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+             <ol>
+                <li><strong>Install DuckStation</strong> - Install the 'DuckStation' app from the Google Play Store or download the APK from the official GitHub releases page (enable "Install unknown apps" if needed).</li>
+                <li><strong>Grant Permissions & Place BIOS</strong> - Launch the app and grant storage permissions. Place your legally obtained PS1 BIOS file(s) in a location on your device storage (e.g., a dedicated `DuckStation/bios` folder you create).</li>
+                <li><strong>Initial Setup</strong> - Follow the on-screen setup wizard:
+                     <ul>
+                        <li>The app will ask you to specify the location of your BIOS files. Browse to and select the folder where you placed them.</li>
+                        <li>Add your game directory/directories containing your PS1 game images.</li>
+                     </ul>
+                </li>
+                 <li><strong>Configure Settings (Optional)</strong> - Access the app settings menu (often via a side drawer or gear icon):
+                     <ul>
+                        <li>`Graphics Settings`: Select Renderer (Vulkan recommended if supported), Upscale Multiplier, Aspect Ratio.</li>
+                        <li>`Enhancement Settings`: Enable PGXP options, Texture Filtering, Widescreen Hack if desired and if your device can handle it.</li>
+                        <li>`Control Settings`: Customize the touchscreen overlay layout and opacity, or map buttons for a connected Bluetooth/USB gamepad.</li>
+                     </ul>
+                </li>
+                <li><strong>Load Game</strong> - Your scanned games will appear in the main app list. Tap a game to start playing.</li>
+            </ol>
+            <p><strong>System Requirements (Android):</strong> Runs well on a wide range of devices for native resolution. Mid-range devices can often handle some upscaling and basic enhancements. High-end devices (Snapdragon 8xx series or equivalent) are recommended for higher upscaling factors and full PGXP features.</p>
+             <a href="https://duckstation.org/" class="download-button" id="duckstation-android-download">Get DuckStation for Android</a> </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <h3>Is the PS1 BIOS file mandatory for DuckStation?</h3>
+            <p>Yes. DuckStation focuses on accuracy and requires official Sony PlayStation BIOS files (dumped legally from your own console) to boot games.</p>
+
+            <h3>Why doesn't DuckStation need plugins like ePSXe?</h3>
+            <p>DuckStation is a more modern emulator with its graphics (Vulkan, D3D, OpenGL, Metal, Software), sound, and input systems built directly into the application. This eliminates the need for users to find and configure separate external plugin files.</p>
+
+            <h3>What is PGXP and should I enable it?</h3>
+            <p>PGXP (Parallel/Precision Geometry Transform Pipeline) is a feature unique to emulators like DuckStation that corrects graphical issues inherent to the original PS1 hardware, such as wobbling polygons and distorted textures. Enabling PGXP options (Geometry Correction, Texture Correction, Culling Correction) significantly improves visual quality but requires more GPU power.</p>
+
+            <h3>Is DuckStation better than ePSXe or Beetle PSX?</h3>
+            <p>DuckStation is widely regarded as one of the best PS1 emulators available today, offering a great balance of accuracy, performance, features (like PGXP), and ease of use. Beetle PSX (Mednafen core) is known for extremely high accuracy but can be more demanding. ePSXe is older and relies on plugins but still has good compatibility. For most users, DuckStation is often the recommended choice now.</p>
+             <h3>What game formats does DuckStation support?</h3>
+             <p>DuckStation supports most common PS1 formats, including BIN/CUE (single or multiple BINs), ISO, IMG, MDF/MDS, PBP, ECM, and CHD (recommended compressed format).</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+        </div>
+        <p>&copy; 2025 ROM Central.</p>
+    </footer>
+
+
+    <div class="ad-banner-right" aria-label="Advertisement">Ad Space</div>
+
+    <script>
+        // Ad dismissal script
+        const dismissButton = document.getElementById('dismissAdButton');
+        if (dismissButton) {
+            dismissButton.addEventListener('click', function() {
+                const adBannerLeft = document.getElementById('adBannerLeft');
+                if (adBannerLeft) {
+                    adBannerLeft.classList.add('hidden');
+                }
+            });
+        }
+
+        // Placeholder for theme toggle or other JS from script.js
+        const themeToggleButton = document.getElementById('theme-toggle');
+        if (themeToggleButton) {
+             themeToggleButton.textContent = ''; // Example
+             // Add theme toggle logic here
+        }
+    </script>
+</body>
+</html>

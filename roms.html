@@ -1,0 +1,159 @@
+	<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROM Central - ROMs</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="ROM Central Logo" class="logo">
+        </a>
+        <button id="theme-toggle"></button>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="roms.html">ROMs</a></li>
+            <li><a href="emulators.html">Emulators</a></li>
+            <li><a href="bios.html">Mobile Games</a></li>
+            <li><a href="rom-packs.html">ROM Packs</a></li>
+			 <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <h1>Choose Your Console</h1>
+        <div class="console-grid">
+            <a href="nes.html" class="console-item">
+                <img src="images/nes.png" alt="NES">
+                <p>Nintendo NES</p>
+            </a>
+            <a href="snes.html" class="console-item">
+                <img src="images/snes.png" alt="SNES">
+                <p>Super Nintendo</p>
+            </a>
+            <a href="gameboy.html" class="console-item">
+                <img src="images/gameboy.png" alt="Game Boy">
+                <p>Game Boy</p>
+            </a>
+            <a href="gba.html" class="console-item">
+                <img src="images/gba.png" alt="GBA">
+                <p>Game Boy Advance</p>
+            </a>
+            <a href="gamecube.html" class="console-item">
+                <img src="images/gamecube.png" alt="GameCube">
+                <p>GameCube</p>
+            </a>
+            <a href="n64.html" class="console-item">
+                <img src="images/n64.png" alt="N64">
+                <p>Nintendo 64</p>
+            </a>
+            <a href="genesis.html" class="console-item">
+                <img src="images/genesis.png" alt="Sega Genesis">
+                <p>Sega Genesis</p>
+            </a>
+            <a href="saturn.html" class="console-item">
+                <img src="images/saturn.png" alt="Sega Saturn">
+                <p>Sega Saturn</p>
+            </a>
+            <a href="dreamcast.html" class="console-item">
+                <img src="images/dreamcast.png" alt="Dreamcast">
+                <p>Sega Dreamcast</p>
+            </a>
+            <a href="ps1.html" class="console-item">
+                <img src="images/ps1.png" alt="PS1">
+                <p>PlayStation 1</p>
+            </a>
+            <a href="ps2.html" class="console-item">
+                <img src="images/ps2.png" alt="PS2">
+                <p>PlayStation 2</p>
+            </a>
+            <a href="ps3.html" class="console-item">
+                <img src="images/ps3.png" alt="PS3">
+                <p>PlayStation 3</p>
+            </a>
+            <a href="psp.html" class="console-item">
+                <img src="images/psp.png" alt="PSP">
+                <p>PlayStation Portable</p>
+            </a>
+            <a href="psvita.html" class="console-item">
+                <img src="images/psvita.png" alt="PS Vita">
+                <p>PlayStation Vita</p>
+            </a>
+        </div>
+    </main>
+    
+    <aside>
+        <div class="ad-banner">Ad Space</div>
+    </aside>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+        </div>
+        <p>&copy; 2025 ROM Central.</p>
+    </footer>
+
+    <!-- Fixed Ad Banner on the lower right -->
+    <div class="ad-banner-right">Ad Space</div>
+</body>
+
+<style>
+.console-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    padding: 20px;
+}
+
+.console-item {
+    text-align: center;
+    background: var(--card-bg);
+    padding: 15px;
+    border-radius: 10px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+}
+
+.console-item img {
+    width: 100px;
+    height: auto;
+}
+
+.console-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Fixed Ad Banner on the lower right */
+.ad-banner-right {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+    font-size: 1.2em;
+    border-radius: 8px;
+    z-index: 1000; /* Ensure it's above other content */
+}
+
+	        .footer-links {
+            margin-bottom: 15px;
+        }
+        .footer-links a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+</style>
+</html>

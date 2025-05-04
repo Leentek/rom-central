@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>APS3e - PS3 Emulator for Android Setup Guide | ROM Central</title>
+    <meta name="description" content="Download and set up APS3e, the PlayStation 3 (PS3) emulator for Android devices. Requires PS3 firmware and powerful hardware for optimal performance.">
+    <meta name="keywords" content="APS3e download, PS3 emulator Android, APS3e APK, PlayStation 3 emulator, APS3e setup, PS3 games on Android, APS3e firmware, Vulkan Android">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="YOUR_APS3E_PAGE_URL">
+    <meta property="og:title" content="APS3e - PS3 Emulator for Android Setup Guide | ROM Central">
+    <meta property="og:description" content="Complete guide to installing and configuring APS3e emulator on Android for playing PS3 games. Requires PS3 firmware and powerful hardware.">
+    <meta property="og:image" content="YOUR_APS3E_PREVIEW_IMAGE.jpg">
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="YOUR_APS3E_PAGE_URL">
+    <meta property="twitter:title" content="APS3e - PS3 Emulator for Android Setup Guide | ROM Central">
+    <meta property="twitter:description" content="Complete guide to installing and configuring APS3e emulator on Android for playing PS3 games. Requires PS3 firmware and powerful hardware.">
+    <meta property="twitter:image" content="YOUR_APS3E_PREVIEW_IMAGE.jpg">
+    <link rel="canonical" href="YOUR_APS3E_PAGE_URL">
+    <link rel="icon" href="/favicon.ico" type="image/x-icon">
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Install and Set Up APS3e (PS3 Emulator for Android)",
+      "description": "Guide to installing APS3e on Android devices, including firmware setup and performance optimization.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Download APS3e",
+          "text": "Get the latest APS3e APK from a trusted source. Note that this is an experimental emulator.",
+          "url": "YOUR_APS3E_PAGE_URL#android-installation"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Install APK",
+          "text": "Enable 'Install unknown apps' in Android settings and install the APS3e APK."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Obtain PS3 Firmware",
+          "text": "Legally obtain PS3 firmware (.PUP file) from your own console and install it in APS3e."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Configure Settings",
+          "text": "Adjust settings for optimal performance:",
+          "itemListElement": [
+            {"@type": "HowToStep", "name": "Graphics", "text": "Set rendering resolution and enable Vulkan if supported"},
+            {"@type": "HowToStep", "name": "CPU", "text": "Configure CPU emulation settings based on your device"},
+            {"@type": "HowToStep", "name": "Controllers", "text": "Set up gamepad controls or use touchscreen"}
+          ]
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Load Games",
+          "text": "Add your PS3 game files (.iso, .pkg) and start playing."
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        /* Using refined styles, PS3 theme */
+        html, body { height: 100%; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        header { /* Add header styles if needed from styles.css */ }
+        nav { /* Add nav styles if needed from styles.css */ }
+        nav ul { list-style: none; padding: 0; margin: 0; text-align: center; }
+        nav li { display: inline-block; margin: 0 15px; }
+        nav a { text-decoration: none; color: #007bff; }
+        nav a:hover, nav a[aria-current="page"] { text-decoration: underline; font-weight: bold; }
+
+        main { padding: 20px; max-width: 1200px; margin: 0 auto; padding-bottom: 80px; }
+        h1 { color: #0066cc; /* PS3 Blue */ text-align: center; margin-bottom: 30px; font-size: 2.2em; }
+        h2 { color: #333; border-bottom: 2px solid #0066cc; /* PS3 Blue */ padding-bottom: 5px; margin-top: 40px; }
+        section { margin-bottom: 50px; background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .important-note { background-color: #fff3cd; border-left: 5px solid #ffeeba; padding: 10px; margin-bottom: 20px; }
+        .build-note { background-color: #d1ecf1; border-left: 5px solid #bee5eb; padding: 10px; margin-bottom: 20px; }
+        .video-container { position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; max-width: 100%; background: #000; margin: 20px auto; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .download-button { display: inline-block; background-color: #0066cc; /* PS3 Blue */ color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; transition: background-color 0.3s; border: none; cursor: pointer; }
+        .download-button:hover { background-color: #0055aa; /* Darker PS3 Blue */ }
+        ol { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        #faq h3 { margin-top: 25px; color: #444; }
+
+        footer { background-color: #333; color: white; text-align: center; padding: 15px 10px; position: relative; bottom: 0; width: 100%; margin-top: 40px; box-sizing: border-box; }
+        .footer-links { margin-bottom: 10px; }
+        .footer-links a { color: #fff; margin: 0 10px; text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; }
+
+        .ad-banner-left, .ad-banner-right { position: fixed; background-color: #333; color: white; padding: 10px; font-size: 1.2em; border-radius: 8px; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .ad-banner-left { bottom: 20px; left: 20px; writing-mode: vertical-rl; transform: rotate(180deg); }
+        #adBannerLeft button { position: absolute; top: -5px; right: -25px; background: #555; color: white; border: none; border-radius: 50%; cursor: pointer; font-size: 0.8em; width: 20px; height: 20px; line-height: 20px; text-align: center; transform: rotate(180deg); writing-mode: horizontal-tb; }
+        .ad-banner-right { bottom: 20px; right: 20px; }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-container" aria-label="ROM Central Home">
+            <img src="logo.png" alt="ROM Central Logo" class="logo">
+        </a>
+        <button id="theme-toggle" aria-label="Toggle theme"></button>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="roms.html">ROMs</a></li>
+            <li><a href="emulators.html" aria-current="page">Emulators</a></li>
+            <li><a href="bios.html">Mobile Games</a></li>
+            <li><a href="rom-packs.html">ROM Packs</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>APS3e - PS3 Emulator for Android</h1>
+
+        <div class="important-note">
+            <strong>Experimental Software:</strong> APS3e is an experimental PS3 emulator for Android. Performance varies greatly by device and most games won't be playable, even on high-end hardware.
+        </div>
+        <div class="build-note">
+            <strong>Requirements:</strong> You'll need a powerful Android device (Snapdragon 8-series or equivalent), legally obtained PS3 firmware, and legally dumped game files.
+        </div>
+
+        <section id="android-installation">
+            <h2>Android Setup Guide</h2>
+            <p>APS3e brings PlayStation 3 emulation to Android devices, though with very limited compatibility and performance.</p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="ACTUAL_YOUTUBE_EMBED_URL_APS3E_ANDROID" title="APS3e Android Installation & Setup Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <ol>
+                <li><strong>Download APS3e</strong> - Get the latest APS3e APK from a trusted source (not available on Play Store).</li>
+                <li><strong>Install APK</strong> - Enable "Install unknown apps" for your browser/file manager and install the APS3e APK.</li>
+                <li><strong>Obtain PS3 Firmware</strong> - Legally obtain the PS3 firmware (.PUP file) from your own console.</li>
+                <li><strong>Install Firmware</strong> - Open APS3e and install the firmware file when prompted.</li>
+                <li><strong>Configure Settings</strong> - Adjust settings for best performance:
+                    <ul>
+                        <li><strong>Graphics</strong>: Set resolution to 720p or lower, enable Vulkan if supported</li>
+                        <li><strong>CPU</strong>: Start with default settings, adjust based on performance</li>
+                        <li><strong>Controls</strong>: Configure touch controls or connect a Bluetooth controller</li>
+                    </ul>
+                </li>
+                <li><strong>Add Games</strong> - Place your legally dumped PS3 game files (.iso, .pkg) in a folder and add them in APS3e.</li>
+                <li><strong>Start Playing</strong> - Select a game and test performance. Most games won't be playable.</li>
+            </ol>
+            <p><strong>System Requirements (Android):</strong> Extremely demanding. Requires a flagship device with Snapdragon 8 Gen 2/3 or equivalent, 8GB+ RAM, and good cooling. Even then, most games won't be playable.</p>
+            <a href="https://aps3e.en.uptodown.com/android" class="download-button" id="aps3e-android-download">Download APS3e for Android</a>
+        </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <h3>Is APS3e legal to use?</h3>
+            <p>The emulator itself is legal, but you must own both the PS3 firmware (dumped from your own console) and any games you attempt to play.</p>
+
+            <h3>Why is APS3e not on the Google Play Store?</h3>
+            <p>As an experimental emulator that requires proprietary firmware, APS3e doesn't meet Play Store guidelines. You must sideload the APK.</p>
+
+            <h3>What Android devices can run APS3e?</h3>
+            <p>Only the most powerful Android devices (Snapdragon 8 Gen 2/3, Dimensity 9000+ or equivalent) have any chance of running games, and even then performance will be poor for most titles.</p>
+
+            <h3>Why is PS3 emulation so difficult on Android?</h3>
+            <p>The PS3's Cell processor architecture is extremely complex to emulate, requiring much more powerful hardware than the original console. Mobile devices simply lack the raw power for good emulation.</p>
+
+            <h3>What games work with APS3e?</h3>
+            <p>Very few games are currently playable. Simple 2D games might run at low speeds, but most 3D games won't be playable. Check community forums for compatibility updates.</p>
+
+            <h3>How does APS3e compare to RPCS3 on PC?</h3>
+            <p>RPCS3 on high-end PCs can run many PS3 games well, while APS3e on Android is still in early stages with very limited compatibility. They share some code but have completely different performance characteristics.</p>
+
+            <h3>Will APS3e performance improve in the future?</h3>
+            <p>Possibly, as both the emulator and Android hardware improve. However, PS3 emulation will likely always require much more powerful hardware than available on mobile devices.</p>
+
+            <h3>Can I use a controller with APS3e?</h3>
+            <p>Yes, Bluetooth controllers like the DualShock 4 or Xbox controllers can be configured in the emulator settings for better gameplay.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+        <p>&copy; 2025 ROM Central.</p>
+    </footer>
+
+    <div id="adBannerLeft">
+        <button id="dismissAdButton" aria-label="Dismiss ad">X</button>
+        <div class="ad-banner-left">Vertical Ad Space</div>
+    </div>
+    <div class="ad-banner-right" aria-label="Advertisement">Ad Space</div>
+
+    <script>
+        // Ad dismissal script
+        const dismissButton = document.getElementById('dismissAdButton');
+        if (dismissButton) {
+            dismissButton.addEventListener('click', function() {
+                const adBannerLeft = document.getElementById('adBannerLeft');
+                if (adBannerLeft) {
+                    adBannerLeft.classList.add('hidden');
+                }
+            });
+        }
+
+        // Placeholder for theme toggle or other JS from script.js
+        const themeToggleButton = document.getElementById('theme-toggle');
+        if (themeToggleButton) {
+             themeToggleButton.textContent = '';
+             // Add theme toggle logic here
+        }
+    </script>
+</body>
+</html>

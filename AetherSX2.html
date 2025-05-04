@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AetherSX2 - PS2 Emulator for Android Setup Guide | ROM Central</title>
+    <meta name="description" content="Setup guide for AetherSX2, a PlayStation 2 (PS2) emulator for Android based on PCSX2. Requires PS2 BIOS file and a powerful device. Note: Development has stopped.">
+    <meta name="keywords" content="AetherSX2 download, PS2 emulator Android, PlayStation 2 emulator Android, AetherSX2 setup, AetherSX2 BIOS, play PS2 games Android, PCSX2 Android port, AetherSX2 APK">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="YOUR_AETHERSX2_PAGE_URL"> <meta property="og:title" content="AetherSX2 - PS2 Emulator for Android Setup Guide | ROM Central">
+    <meta property="og:description" content="Guide to setting up AetherSX2 on Android for PS2 emulation. Requires BIOS & powerful hardware. Development discontinued, use archived builds cautiously.">
+    <meta property="og:image" content="YOUR_AETHERSX2_PREVIEW_IMAGE.jpg"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="YOUR_AETHERSX2_PAGE_URL"> <meta property="twitter:title" content="AetherSX2 - PS2 Emulator for Android Setup Guide | ROM Central">
+    <meta property="twitter:description" content="Guide to setting up AetherSX2 on Android for PS2 emulation. Requires BIOS & powerful hardware. Development discontinued, use archived builds cautiously.">
+    <meta property="twitter:image" content="YOUR_AETHERSX2_PREVIEW_IMAGE.jpg"> <link rel="canonical" href="YOUR_AETHERSX2_PAGE_URL"> <link rel="icon" href="/favicon.ico" type="image/x-icon"> <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Install and Set Up AetherSX2 (PlayStation 2 Emulator for Android)",
+      "description": "Guide to installing archived AetherSX2 APKs, setting up PS2 BIOS files, and configuring the emulator on Android.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Obtain Requirements",
+           "itemListElement": [
+             {"@type": "HowToStep", "name": "Find Trusted AetherSX2 APK", "text": "Since development stopped and it's off the Play Store, find a reputable archive source for older builds (e.g., build 3668 or alpha-2230). Be cautious of unofficial sources.", "url": "YOUR_AETHERSX2_PAGE_URL#android-installation"},
+             {"@type": "HowToStep", "name": "Obtain PS2 BIOS Files", "text": "AetherSX2 REQUIRES PlayStation 2 BIOS files (e.g., 'SCPH-39001.bin', etc.). You must legally obtain these from your own PS2 console."}
+           ]
+        },
+        {
+           "@type": "HowToStep",
+            "name": "Install AetherSX2 APK",
+            "text": "Enable 'Install unknown apps' for your browser/file manager in Android Settings. Open the downloaded AetherSX2 APK file to install it. Grant necessary permissions."
+        },
+        {
+          "@type": "HowToStep",
+           "name": "Place BIOS Files",
+           "text": "Place your legally obtained PS2 BIOS files (.bin) in the location specified by the app during first setup, or later via App Settings > BIOS (often Internal Storage > Android > data > xyz.aethersx2.android > files > bios)."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Initial Setup & Configuration",
+           "text": "Launch AetherSX2. Complete the initial setup wizard (Theme, BIOS selection, Game Directory selection). Access 'App Settings' via the side menu for further configuration."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Configure Key Settings",
+          "itemListElement": [
+            {"@type": "HowToStep", "name": "Graphics:", "text": "Set Renderer (Vulkan recommended if supported), Upscale Multiplier (start low, e.g., 1x or 2x), Aspect Ratio."},
+            {"@type": "HowToStep", "name": "System:", "text": "Adjust EE Cycle Rate and EE Cycle Skip for performance tuning (lower values = faster but potentially less stable)."},
+            {"@type": "HowToStep", "name": "Controls:", "text": "Configure Touchscreen controller layout/opacity or map a physical Gamepad."}
+           ]
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Load Game",
+           "text": "Games from your specified directory will appear in the main list. Tap a game (ISO, CHD, CSO format) to start."
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="styles.css"> <script defer src="script.js"></script> <style>
+        /* Using refined styles, PS2 blue theme */
+        html, body { height: 100%; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        header { /* Add header styles if needed from styles.css */ }
+        nav { /* Add nav styles if needed from styles.css */ }
+        nav ul { list-style: none; padding: 0; margin: 0; text-align: center; /* Example */ /* Add more nav styles */ }
+        nav li { display: inline-block; /* Example */ margin: 0 15px; /* Example */ /* Add more nav styles */ }
+        nav a { text-decoration: none; color: #007bff; /* Example */ /* Add nav link styles */ }
+        nav a:hover, nav a[aria-current="page"] { text-decoration: underline; font-weight: bold; /* Example */ }
+
+        main { padding: 20px; max-width: 1200px; margin: 0 auto; padding-bottom: 80px; /* Ensure footer doesn't overlap content */ }
+        h1 { color: #3d6ae1; /* PS2 Blue */ text-align: center; margin-bottom: 30px; font-size: 2.2em; }
+        h2 { color: #333; border-bottom: 2px solid #3d6ae1; /* PS2 Blue */ padding-bottom: 5px; margin-top: 40px; }
+        section { margin-bottom: 50px; background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .important-note { background-color: #fff3cd; border-left: 5px solid #ffeeba; padding: 10px; margin-bottom: 20px; } /* Style for BIOS note */
+        .status-note { background-color: #f8d7da; border-left: 5px solid #f5c6cb; padding: 10px; margin-bottom: 20px; } /* Style for status note */
+         .video-container { position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0; overflow: hidden; max-width: 100%; background: #000; margin: 20px auto; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .download-button { display: inline-block; background-color: #3d6ae1; /* PS2 Blue */ color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; transition: background-color 0.3s; border: none; cursor: pointer; }
+        .download-button:hover { background-color: #2a52be; /* Darker PS2 Blue */ }
+        ol { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        #faq h3 { margin-top: 25px; color: #444; }
+
+        footer { background-color: #333; color: white; text-align: center; padding: 15px 10px; position: relative; bottom: 0; width: 100%; margin-top: 40px; box-sizing: border-box; }
+        .footer-links { margin-bottom: 10px; }
+        .footer-links a { color: #fff; margin: 0 10px; text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; }
+
+        .ad-banner-left, .ad-banner-right { position: fixed; background-color: #333; color: white; padding: 10px; font-size: 1.2em; border-radius: 8px; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .ad-banner-left { bottom: 20px; left: 20px; writing-mode: vertical-rl; transform: rotate(180deg); }
+        #adBannerLeft button { position: absolute; top: -5px; right: -25px; background: #555; color: white; border: none; border-radius: 50%; cursor: pointer; font-size: 0.8em; width: 20px; height: 20px; line-height: 20px; text-align: center; transform: rotate(180deg); writing-mode: horizontal-tb; }
+        .ad-banner-right { bottom: 20px; right: 20px; }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-container" aria-label="ROM Central Home">
+            <img src="logo.png" alt="ROM Central Logo" class="logo"> </a>
+        <button id="theme-toggle" aria-label="Toggle theme"></button>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="roms.html">ROMs</a></li>
+            <li><a href="emulators.html" aria-current="page">Emulators</a></li> <li><a href="bios.html">Mobile Games</a></li>
+            <li><a href="rom-packs.html">ROM Packs</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>AetherSX2 - PlayStation 2 Emulator for Android</h1>
+
+        <div class="status-note">
+            <strong>Important Status Update:</strong> Development of AetherSX2 was stopped by the original developer. The app has been removed from the Google Play Store and will not receive further official updates. Users wanting to use AetherSX2 must find older, trusted APK versions (e.g., build 3668 'alpha-2230') from reliable archive sources online. **Exercise caution and avoid downloading from untrusted websites, as unofficial APKs may contain malware.**
+        </div>
+         <div class="important-note">
+            <strong>BIOS Required:</strong> AetherSX2 <strong>requires PlayStation 2 BIOS files</strong> (e.g., <code>SCPH-39001.bin</code>, <code>SCPH-70012.bin</code>) to function. You must legally obtain these files from your own PS2 console.
+        </div>
+
+        <section id="android-installation">
+            <h2>Android Setup Guide</h2>
+             <p>AetherSX2 brings PS2 emulation to Android devices, based on the PCSX2 project. It requires powerful hardware for good performance.</p>
+            <div class="video-container">
+                 <iframe width="560" height="315" src="ACTUAL_YOUTUBE_EMBED_URL_AETHER_ANDROID" title="AetherSX2 Android Installation & Setup Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+             <ol>
+                <li><strong>Find & Download Trusted APK</strong> - Since it's not on the Play Store, search reputable emulation communities or archive sites for recommended older AetherSX2 builds (like build 3668). Download the APK file.</li>
+                <li><strong>Enable Unknown Sources & Install</strong> - Go to your Android Settings > Security (or Apps > Special app access) > "Install unknown apps" and grant permission to your browser or file manager. Then, open the downloaded APK file and tap "Install".</li>
+                 <li><strong>Obtain & Place BIOS</strong> - Legally dump the BIOS files from your PS2 console. Launch AetherSX2 once. It will likely ask for the BIOS location during setup, or you can set it later in App Settings > BIOS. A common location is to create a `bios` folder inside `Internal Storage/Android/data/xyz.aethersx2.android/files/` and place the `.bin` files there.</li>
+                 <li><strong>Launch & Initial Setup</strong> - Open AetherSX2. Grant storage permissions. Follow the setup wizard: select theme, point to your BIOS directory, and add your game directory (where your PS2 ISO, CHD, or CSO files are stored).</li>
+                <li><strong>Configure Settings</strong> - Access 'App Settings' from the side menu:
+                     <ul>
+                        <li>`Graphics`: Select Renderer (`Vulkan` preferred if supported, otherwise `OpenGL`), set Upscale Multiplier (start at `1x` or `2x`), Aspect Ratio, etc.</li>
+                        <li>`System`: Adjust `EE Cycle Rate` (underclocking, e.g., -1 or -2) and `EE Cycle Skip` (underclocking) can improve speed in some demanding games but may cause issues. Experiment cautiously.</li>
+                        <li>`Controls`: Configure the `Touchscreen` controller layout, or go to `Controller Port 1` to map a connected `Gamepad`.</li>
+                     </ul>
+                </li>
+                <li><strong>Load Game</strong> - Your games should appear in the main list after setting the game directory. Tap a game to start playing.</li>
+            </ol>
+            <p><strong>System Requirements (Android):</strong> Very Demanding. A high-end device with a powerful **ARM64 processor (Snapdragon 845 or newer strongly recommended)**, at least 4GB RAM (more is better), and support for Vulkan graphics is needed for acceptable performance in many PS2 games.</p>
+             <a href="https://github.com/AetherSX2-backup/AetherSX2-builds" class="download-button" id="aethersx2-android-download">Find Info on AetherSX2 Builds</a> </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <h3>Why was AetherSX2 discontinued and removed from the Play Store?</h3>
+            <p>The original developer stopped development citing various reasons including online harassment and issues with ad implementation impersonation. It was subsequently removed from the Google Play Store.</p>
+
+            <h3>What is the best version/build of AetherSX2 to use?</h3>
+            <p>Since development stopped, many users recommend sticking with specific well-regarded older builds obtained from trusted archive sources, such as build 3668 (often labelled alpha-2230), which predates some controversial changes. Always verify the source of your APK.</p>
+
+            <h3>Is the PS2 BIOS file really mandatory?</h3>
+            <p>Yes. AetherSX2 requires official PlayStation 2 BIOS files dumped legally from your own console to boot games. There is no HLE BIOS alternative included.</p>
+
+            <h3>How can I improve performance in AetherSX2?</h3>
+            <p>Ensure you have a powerful enough device. Use the Vulkan renderer if supported. Start with native resolution (1x upscale) and increase cautiously. Experiment with lowering the EE Cycle Rate and EE Cycle Skip in System settings for demanding games (e.g., -1/-1 or -2/-1), but note this can cause instability or glitches. Close background apps.</p>
+
+             <h3>Is there a PS2 emulator for PC?</h3>
+             <p>Yes, AetherSX2 is based on the long-standing and excellent open-source PC emulator **PCSX2**. If you want to play PS2 games on Windows, Linux, or macOS, PCSX2 is the recommended choice.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+        </div>
+        <p>&copy; 2025 ROM Central.</p>
+    </footer>
+
+
+    <div class="ad-banner-right" aria-label="Advertisement">Ad Space</div>
+
+    <script>
+        // Ad dismissal script
+        const dismissButton = document.getElementById('dismissAdButton');
+        if (dismissButton) {
+            dismissButton.addEventListener('click', function() {
+                const adBannerLeft = document.getElementById('adBannerLeft');
+                if (adBannerLeft) {
+                    adBannerLeft.classList.add('hidden');
+                }
+            });
+        }
+
+        // Placeholder for theme toggle or other JS from script.js
+        const themeToggleButton = document.getElementById('theme-toggle');
+        if (themeToggleButton) {
+             themeToggleButton.textContent = ''; // Example
+             // Add theme toggle logic here
+        }
+    </script>
+</body>
+</html>

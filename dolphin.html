@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dolphin Emulator - GameCube & Wii Emulator Setup | ROM Central</title>
+    <meta name="description" content="Download and set up the Dolphin emulator for PC (Windows, Mac, Linux) and Android. Play Nintendo GameCube and Wii games with enhanced graphics and features.">
+    <meta name="keywords" content="Dolphin emulator download, GameCube emulator, Wii emulator, Dolphin setup, play GameCube games, play Wii games, Dolphin Android, Dolphin PC, Ishiiruka, Dolphin settings">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="YOUR_DOLPHIN_PAGE_URL"> <meta property="og:title" content="Dolphin Emulator - GameCube & Wii Emulator Setup | ROM Central">
+    <meta property="og:description" content="Comprehensive guide to downloading and setting up the Dolphin emulator for playing GameCube and Wii games on PC and Android devices.">
+    <meta property="og:image" content="YOUR_DOLPHIN_PREVIEW_IMAGE.jpg"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="YOUR_DOLPHIN_PAGE_URL"> <meta property="twitter:title" content="Dolphin Emulator - GameCube & Wii Emulator Setup | ROM Central">
+    <meta property="twitter:description" content="Comprehensive guide to downloading and setting up the Dolphin emulator for playing GameCube and Wii games on PC and Android devices.">
+    <meta property="twitter:image" content="YOUR_DOLPHIN_PREVIEW_IMAGE.jpg"> <link rel="canonical" href="YOUR_DOLPHIN_PAGE_URL"> <link rel="icon" href="/favicon.ico" type="image/x-icon"> <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Install and Set Up Dolphin Emulator (GameCube/Wii)",
+      "description": "Guide to installing and configuring the Dolphin emulator on PC and Android for playing GameCube and Wii games.",
+      "step": [
+        {
+          "@type": "HowToSection",
+          "name": "PC Setup (Windows, macOS, Linux)",
+          "itemListElement": [
+            {"@type": "HowToStep", "name": "Download Dolphin", "text": "Get the latest Development or Beta build from the official Dolphin Emulator website (dolphin-emu.org) for your OS. Development builds have the latest fixes and features.", "url": "YOUR_DOLPHIN_PAGE_URL#pc-installation"},
+            {"@type": "HowToStep", "name": "Extract Files", "text": "Dolphin usually comes as a 7z archive. Extract its contents into a dedicated folder using 7-Zip or a compatible tool."},
+            {"@type": "HowToStep", "name": "Run Dolphin", "text": "Open the extracted folder and run the Dolphin executable (Dolphin.exe on Windows)."},
+            {"@type": "HowToStep", "name": "Configure Graphics", "text": "Click the 'Graphics' button. Select a Backend (Vulkan, Direct3D 11/12, or OpenGL). Set the Internal Resolution (e.g., 2x, 3x for HD/QHD) and Anti-Aliasing under Enhancements. Adjust other settings as needed for performance."},
+            {"@type": "HowToStep", "name": "Configure Controllers", "text": "Click 'Controllers'. For GameCube games, configure 'Port 1' under GameCube Controllers (set device to your gamepad, map buttons). For Wii games, configure 'Emulated Wii Remote' or use 'Real Wii Remote' if you have one connected via Bluetooth."},
+            {"@type": "HowToStep", "name": "Set Game Folders", "text": "Go to Config -> Paths tab. Add the folder(s) containing your GameCube/Wii game files (ISO, GCM, WBFS, etc.)."},
+            {"@type": "HowToStep", "name": "Load Game", "text": "Double-click a game from the list in the main window, or go to File -> Open... and select a game file."}
+          ]
+        },
+        {
+          "@type": "HowToSection",
+          "name": "Android Setup",
+          "itemListElement": [
+            {"@type": "HowToStep", "name": "Download Dolphin", "text": "Install Dolphin Emulator from the Google Play Store or download the latest Beta/Development APK from dolphin-emu.org.", "url": "YOUR_DOLPHIN_PAGE_URL#android-installation"},
+            {"@type": "HowToStep", "name": "Install the App", "text": "Install from Play Store or open the APK (enable 'Install unknown apps' if needed). Grant necessary permissions."},
+            {"@type": "HowToStep", "name": "Configure Graphics", "text": "Tap the settings icon. Go to Graphics Settings. Select Video Backend (Vulkan recommended for performance if supported), adjust Internal Resolution and other Enhancement settings."},
+            {"@type": "HowToStep", "name": "Configure Controllers", "text": "In Settings, configure GameCube Input (map touch overlay or physical gamepad) and Wii Input (emulated or real via Bluetooth)."},
+            {"@type": "HowToStep", "name": "Add Game Folder", "text": "In Settings -> Paths, add the directory containing your GameCube/Wii game files."},
+            {"@type": "HowToStep", "name": "Load Game", "text": "Return to the main screen, games in your specified folder should appear. Tap a game to start."}
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="styles.css"> <script defer src="script.js"></script> <style>
+        /* Using refined styles, Dolphin blue theme */
+        html, body { height: 100%; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        header { /* Add header styles if needed from styles.css */ }
+        nav { /* Add nav styles if needed from styles.css */ }
+        nav ul { list-style: none; padding: 0; margin: 0; text-align: center; /* Example */ /* Add more nav styles */ }
+        nav li { display: inline-block; /* Example */ margin: 0 15px; /* Example */ /* Add more nav styles */ }
+        nav a { text-decoration: none; color: #007bff; /* Example */ /* Add nav link styles */ }
+        nav a:hover, nav a[aria-current="page"] { text-decoration: underline; font-weight: bold; /* Example */ }
+
+        main { padding: 20px; max-width: 1200px; margin: 0 auto; padding-bottom: 80px; /* Ensure footer doesn't overlap content */ }
+        h1 { color: #3b7dde; /* Dolphin Blue */ text-align: center; margin-bottom: 30px; font-size: 2.2em; }
+        h2 { color: #333; border-bottom: 2px solid #3b7dde; /* Dolphin Blue */ padding-bottom: 5px; margin-top: 40px; }
+        section { margin-bottom: 50px; background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+         .video-container { position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0; overflow: hidden; max-width: 100%; background: #000; margin: 20px auto; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .download-button { display: inline-block; background-color: #3b7dde; /* Dolphin Blue */ color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; transition: background-color 0.3s; border: none; cursor: pointer; }
+        .download-button:hover { background-color: #2a64b8; /* Darker Dolphin Blue */ }
+        ol { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        #faq h3 { margin-top: 25px; color: #444; }
+
+        footer { background-color: #333; color: white; text-align: center; padding: 15px 10px; position: relative; bottom: 0; width: 100%; margin-top: 40px; box-sizing: border-box; }
+        .footer-links { margin-bottom: 10px; }
+        .footer-links a { color: #fff; margin: 0 10px; text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; }
+
+        .ad-banner-left, .ad-banner-right { position: fixed; background-color: #333; color: white; padding: 10px; font-size: 1.2em; border-radius: 8px; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .ad-banner-left { bottom: 20px; left: 20px; writing-mode: vertical-rl; transform: rotate(180deg); }
+        #adBannerLeft button { position: absolute; top: -5px; right: -25px; background: #555; color: white; border: none; border-radius: 50%; cursor: pointer; font-size: 0.8em; width: 20px; height: 20px; line-height: 20px; text-align: center; transform: rotate(180deg); writing-mode: horizontal-tb; }
+        .ad-banner-right { bottom: 20px; right: 20px; }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-container" aria-label="ROM Central Home">
+            <img src="logo.png" alt="ROM Central Logo" class="logo"> </a>
+        <button id="theme-toggle" aria-label="Toggle theme"></button>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="roms.html">ROMs</a></li>
+            <li><a href="emulators.html" aria-current="page">Emulators</a></li> <li><a href="bios.html">Mobile Games</a></li>
+            <li><a href="rom-packs.html">ROM Packs</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Dolphin Emulator - GameCube & Wii Setup Guide</h1>
+
+        <section id="pc-installation">
+            <h2>PC Setup Guide (Windows, macOS, Linux)</h2>
+             <p>Dolphin is a high-performance emulator for Nintendo GameCube and Wii games. It requires a reasonably powerful computer for optimal performance.</p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="ACTUAL_YOUTUBE_EMBED_URL_DOLPHIN_PC" title="Dolphin Emulator PC Installation & Setup Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <ol>
+                <li><strong>Download Dolphin</strong> - Visit the official Dolphin Emulator website (dolphin-emu.org). Download the latest **Development Build** for your operating system (Windows x64, macOS, or Linux). Development builds contain the newest features and fixes. Stable builds are older but may be more tested.</li>
+                <li><strong>Extract Files</strong> - Dolphin typically comes as a `.7z` archive. Use 7-Zip (Windows) or a similar extraction tool to extract the contents into a dedicated folder (e.g., `C:\Dolphin-Emulator`).</li>
+                <li><strong>Run Dolphin</strong> - Open the folder and launch the main executable (`Dolphin.exe` on Windows).</li>
+                <li><strong>Configure Graphics</strong> - Click the `Graphics` button on the main toolbar.
+                    <ul>
+                        <li>**Backend:** Choose the best API for your system (Vulkan or D3D11/12 usually preferred on Windows, Vulkan/OpenGL on Linux, Metal on macOS).</li>
+                        <li>**Enhancements Tab:** Set `Internal Resolution` (e.g., `2x` for 720p, `3x` for 1080p) to improve visuals. Adjust `Anti-Aliasing` and `Anisotropic Filtering` as desired.</li>
+                    </ul>
+                </li>
+                <li><strong>Configure Controllers</strong> - Click `Controllers`.
+                    <ul>
+                        <li>**GameCube:** Under 'GameCube Controllers', set Port 1 to 'Standard Controller' and click `Configure`. Select your gamepad from the `Device` dropdown and map the buttons and axes.</li>
+                        <li>**Wii:** Choose 'Emulated Wii Remote' and click `Configure` to map buttons to your gamepad/keyboard, OR select 'Real Wii Remote' to use an actual Wii Remote connected via Bluetooth (may require specific setup like a Bluetooth adapter and sensor bar).</li>
+                    </ul>
+                 </li>
+                 <li><strong>Set Game Folders</strong> - Click `Config` -> `Paths` tab. Click `Add...` and select the folder(s) where you store your GameCube (`.iso`, `.gcm`, `.gcz`) and Wii (`.iso`, `.wbfs`, `.rvz`) game files.</li>
+                <li><strong>Load Game</strong> - Your games should appear in the main Dolphin window. Double-click a game to start playing, or use `File` -> `Open...`.</li>
+            </ol>
+            <p><strong>System Requirements (PC):</strong> Demanding. A modern 4-core CPU (Intel Core i5/Ryzen 5 or better from recent generations), 8GB+ RAM, and a dedicated GPU supporting Vulkan, D3D11+, or OpenGL 4+ are strongly recommended for a good experience, especially at higher internal resolutions.</p>
+            <a href="https://dolphin-emu.org/download/" class="download-button" id="dolphin-pc-download">Download Dolphin for PC</a> </section>
+
+        <section id="android-installation">
+            <h2>Android Setup Guide</h2>
+             <p>Dolphin runs on Android, but requires a powerful, modern device for playable speeds, especially for Wii games. ARM64 devices with Snapdragon processors are generally recommended.</p>
+            <div class="video-container">
+                 <iframe width="560" height="315" src="ACTUAL_YOUTUBE_EMBED_URL_DOLPHIN_ANDROID" title="Dolphin Emulator Android Installation & Setup Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <ol>
+                <li><strong>Download Dolphin</strong> - Install 'Dolphin Emulator' from the Google Play Store or download the latest Beta or Development APK from the official website (dolphin-emu.org/download/).</li>
+                <li><strong>Install the App</strong> - Install from the Play Store or open the downloaded APK. If using an APK, enable "Install unknown apps" in Android Settings -> Security for your browser/file manager.</li>
+                <li><strong>Grant Permissions</strong> - Launch Dolphin and grant storage permissions to allow access to game files.</li>
+                 <li><strong>Configure Graphics</strong> - Tap the settings gear icon -> `Graphics Settings`.
+                    <ul>
+                        <li>**Video Backend:** Select `Vulkan` if your device supports it (usually best performance); otherwise, use `OpenGL`.</li>
+                        <li>**Enhancements:** Adjust `Internal Resolution`. Start low (`1x` or `2x`) and increase only if performance allows. Disable demanding settings if needed.</li>
+                    </ul>
+                </li>
+                 <li><strong>Configure Controllers</strong> - In Settings, go to `GameCube Input` and `Wii Input`. Configure the on-screen touch controls or map a connected Bluetooth/USB gamepad.</li>
+                 <li><strong>Add Game Folder</strong> - In Settings -> `Paths`, tap `Add...` and navigate to the folder on your device storage containing your GameCube/Wii game files.</li>
+                <li><strong>Load Game</strong> - Return to the main screen (swipe down if needed to refresh). Your games should appear. Tap a game to launch it.</li>
+            </ol>
+            <p><strong>System Requirements (Android):</strong> High-end device strongly recommended. Requires a 64-bit Android OS and a powerful processor (e.g., Snapdragon 845 or newer equivalent) and GPU for acceptable performance in most games.</p>
+             <a href="https://play.google.com/store/apps/details?id=org.dolphinemu.dolphinemu&hl=en" class="download-button" id="dolphin-android-download">Download Dolphin for Android</a> </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <h3>Why is Dolphin Emulator so demanding?</h3>
+            <p>Emulating the complex CPU and GPU architecture of the GameCube and especially the Wii accurately requires significant computational power from modern hardware.</p>
+
+            <h3>Should I use Stable or Development builds of Dolphin?</h3>
+            <p>Development builds (released frequently) contain the latest performance improvements, bug fixes, and features. They are generally recommended unless you encounter a specific issue, in which case trying the latest Beta or even an older Stable build might help.</p>
+
+            <h3>What's the best Graphics Backend (Vulkan, OpenGL, Direct3D)?</h3>
+            <p>Vulkan generally offers the best performance on supported hardware (modern GPUs on Windows/Linux, many Android devices). Direct3D 11/12 are good alternatives on Windows. OpenGL is broadly compatible but often slower. Metal is used on macOS.</p>
+
+            <h3>Is setting up controllers difficult?</h3>
+            <p>Mapping a standard gamepad for GameCube controls is usually straightforward. Emulating Wii Remotes accurately with motion controls can be more complex, often requiring specific settings or using a real Wii Remote connected via Bluetooth (which has its own setup steps involving Bluetooth passthrough and potentially a sensor bar).</p>
+             <h3>Do I need special BIOS or system files for Dolphin?</h3>
+             <p>No, unlike some other emulators (like for PlayStation), Dolphin does not require dumped BIOS or system files from a GameCube or Wii console to run games.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+        </div>
+        <p>&copy; 2025 ROM Central.</p>
+    </footer>
+
+
+    <div class="ad-banner-right" aria-label="Advertisement">Ad Space</div>
+
+    <script>
+        // Ad dismissal script
+        const dismissButton = document.getElementById('dismissAdButton');
+        if (dismissButton) {
+            dismissButton.addEventListener('click', function() {
+                const adBannerLeft = document.getElementById('adBannerLeft');
+                if (adBannerLeft) {
+                    adBannerLeft.classList.add('hidden');
+                }
+            });
+        }
+
+        // Placeholder for theme toggle or other JS from script.js
+        const themeToggleButton = document.getElementById('theme-toggle');
+        if (themeToggleButton) {
+             themeToggleButton.textContent = ''; // Example
+             // Add theme toggle logic here
+        }
+    </script>
+</body>
+</html>

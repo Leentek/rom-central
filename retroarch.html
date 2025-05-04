@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>RetroArch Frontend - Multi-System Emulator Setup | ROM Central</title>
+    <meta name="description" content="Download and set up RetroArch, the powerful frontend for Libretro cores. Play games from dozens of classic consoles on PC (Windows, Mac, Linux) and Android.">
+    <meta name="keywords" content="RetroArch download, Libretro cores, multi-system emulator, RetroArch setup, emulator frontend, retro gaming, play classic games, RetroArch PC, RetroArch Android">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="YOUR_RETROARCH_PAGE_URL"> <meta property="og:title" content="RetroArch Frontend - Multi-System Emulator Setup | ROM Central">
+    <meta property="og:description" content="Download and set up RetroArch to play games from dozens of classic consoles on PC and Android using Libretro cores.">
+    <meta property="og:image" content="YOUR_RETROARCH_PREVIEW_IMAGE.jpg"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="YOUR_RETROARCH_PAGE_URL"> <meta property="twitter:title" content="RetroArch Frontend - Multi-System Emulator Setup | ROM Central">
+    <meta property="twitter:description" content="Download and set up RetroArch to play games from dozens of classic consoles on PC and Android using Libretro cores.">
+    <meta property="twitter:image" content="YOUR_RETROARCH_PREVIEW_IMAGE.jpg"> <link rel="canonical" href="YOUR_RETROARCH_PAGE_URL"> <link rel="icon" href="/favicon.ico" type="image/x-icon"> <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Install and Set Up RetroArch",
+      "description": "Step-by-step guide to installing the RetroArch frontend and configuring Libretro cores for multi-system emulation on PC and Android.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Download RetroArch",
+          "text": "Get the correct RetroArch installer or package for your platform (Windows, macOS, Linux, Android, etc.) from the official website or trusted source.",
+          "url": "YOUR_RETROARCH_PAGE_URL#download" },
+        {
+          "@type": "HowToStep",
+          "name": "Install RetroArch",
+          "text": "Run the installer on PC or install the application on your device."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Update Core Info & Assets",
+          "text": "Launch RetroArch. Navigate to the 'Online Updater' section in the main menu. Select 'Update Core Info Files', 'Update Assets', and other relevant updates (like databases, shaders)."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Download Cores",
+          "text": "In the 'Online Updater', go to 'Core Downloader'. Select and download the specific Libretro cores (emulators) for the systems you want to play (e.g., Snes9x for SNES, Nestopia UE for NES)."
+        },
+        {
+           "@type": "HowToStep",
+           "name": "Configure Controllers",
+           "text": "Go to Settings -> Input -> Port 1 Controls. Configure your keyboard or gamepad. RetroArch usually auto-detects common controllers."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Scan for Content (ROMs)",
+          "text": "Go to 'Import Content' -> 'Scan Directory'. Navigate to the folder containing your game ROMs and scan it. RetroArch will attempt to sort your games by system."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Load Content and Play",
+          "text": "Select a game from the system playlists created after scanning, or use 'Load Content' to manually browse for a ROM. RetroArch will ask which core to use if multiple compatible cores are installed."
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="styles.css"> <script defer src="script.js"></script> <style>
+        /* Using the same refined styles from the snes9x example for consistency */
+        html, body {
+            height: 100%;
+            margin: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+        header { /* Add header styles if needed from styles.css */ }
+        nav { /* Add nav styles if needed from styles.css */ }
+        nav ul { list-style: none; padding: 0; margin: 0; text-align: center; /* Example */ /* Add more nav styles */ }
+        nav li { display: inline-block; /* Example */ margin: 0 15px; /* Example */ /* Add more nav styles */ }
+        nav a { text-decoration: none; color: #007bff; /* Example */ /* Add nav link styles */ }
+        nav a:hover, nav a[aria-current="page"] { text-decoration: underline; font-weight: bold; /* Example */ }
+
+        main { padding: 20px; max-width: 1200px; margin: 0 auto; padding-bottom: 80px; /* Ensure footer doesn't overlap content */ }
+        h1 { color: #ff0000; /* RetroArch Red */ text-align: center; margin-bottom: 30px; font-size: 2.2em; }
+        h2 { color: #333; border-bottom: 2px solid #ff0000; /* RetroArch Red */ padding-bottom: 5px; margin-top: 40px; }
+        section { margin-bottom: 50px; background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+         .video-container { position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0; overflow: hidden; max-width: 100%; background: #000; margin: 20px auto; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .download-button { display: inline-block; background-color: #cc0000; /* Darker RetroArch Red */ color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; transition: background-color 0.3s; border: none; cursor: pointer; }
+        .download-button:hover { background-color: #a30000; /* Even Darker Red */ }
+        ol { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        #faq h3 { margin-top: 25px; color: #444; }
+
+        footer { background-color: #333; color: white; text-align: center; padding: 15px 10px; position: relative; bottom: 0; width: 100%; margin-top: 40px; box-sizing: border-box; }
+        .footer-links { margin-bottom: 10px; }
+        .footer-links a { color: #fff; margin: 0 10px; text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; }
+
+        .ad-banner-left, .ad-banner-right { position: fixed; background-color: #333; color: white; padding: 10px; font-size: 1.2em; border-radius: 8px; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .ad-banner-left { bottom: 20px; left: 20px; writing-mode: vertical-rl; transform: rotate(180deg); }
+        #adBannerLeft button { position: absolute; top: -5px; right: -25px; background: #555; color: white; border: none; border-radius: 50%; cursor: pointer; font-size: 0.8em; width: 20px; height: 20px; line-height: 20px; text-align: center; transform: rotate(180deg); writing-mode: horizontal-tb; }
+        .ad-banner-right { bottom: 20px; right: 20px; }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-container" aria-label="ROM Central Home">
+            <img src="logo.png" alt="ROM Central Logo" class="logo"> </a>
+        <button id="theme-toggle" aria-label="Toggle theme"></button>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="roms.html">ROMs</a></li>
+            <li><a href="emulators.html" aria-current="page">Emulators</a></li> <li><a href="bios.html">Mobile Games</a></li>
+            <li><a href="rom-packs.html">ROM Packs</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>RetroArch - Multi-System Emulator Frontend Setup</h1>
+
+        <section id="pc-installation">
+            <h2>PC Setup Guide (Windows, Mac, Linux)</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="ACTUAL_YOUTUBE_EMBED_URL_RA_PC" title="RetroArch PC Installation & Setup Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p>Follow these steps to install and configure RetroArch on your computer:</p>
+            <ol>
+                <li><strong>Download RetroArch</strong> - Get the latest stable version for your operating system (Windows, macOS, Linux) from the official RetroArch website or use the button below.</li>
+                <li><strong>Install RetroArch</strong> - Run the installer (Windows) or extract the archive to a desired location.</li>
+                <li><strong>Launch RetroArch</strong> - Open the application. You'll see the main menu interface (default is Ozone).</li>
+                <li><strong>Update Core Info & Assets</strong> - Navigate to `Main Menu` -> `Online Updater`. Select `Update Core Info Files`, `Update Assets`, `Update Controller Profiles`, and `Update Databases`. This downloads necessary support files.</li>
+                <li><strong>Download Cores</strong> - In the `Online Updater`, select `Core Downloader`. Browse the list and download the cores (emulators) for the systems you want to emulate (e.g., `Snes9x - Current` for SNES, `Nestopia UE` for NES, `mGBA` for GBA, `PCSX ReARMed` for PlayStation).</li>
+                <li><strong>Configure Input</strong> - Go to `Settings` -> `Input` -> `Port 1 Controls`. Check if your controller is detected and mapped correctly. You can manually map buttons if needed.</li>
+                <li><strong>Scan for Games (ROMs)</strong> - Go to `Import Content` -> `Scan Directory`. Navigate to the folder(s) where you store your game ROMs and select `<Scan This Directory>`. RetroArch will try to organize them into playlists by system.</li>
+                <li><strong>Load Game</strong> - Browse the system playlists on the main menu, select a game, and choose the appropriate core to run it. Alternatively, use `Load Content` to manually select a ROM file.</li>
+            </ol>
+            <p><strong>System Requirements (PC):</strong> Varies greatly depending on the core (system) being emulated. Basic 2D systems have low requirements, while 3D systems like PS1, N64, or Saturn require more powerful CPUs and GPUs.</p>
+            <a href="https://www.retroarch.com/index.php?page=platforms" class="download-button" id="retroarch-pc-download">Download RetroArch for PC</a> </section>
+
+        <section id="android-installation">
+            <h2>Android Setup Guide</h2>
+            <div class="video-container">
+                 <iframe width="560" height="315" src="ACTUAL_YOUTUBE_EMBED_URL_RA_ANDROID" title="RetroArch Android Installation & Setup Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p>Follow these steps to install and configure RetroArch on your Android device:</p>
+            <ol>
+                <li><strong>Download RetroArch</strong> - Install RetroArch from the Google Play Store or download the appropriate APK (e.g., RetroArch Plus for newer devices) from the official website using the button below.</li>
+                 <li><strong>Install the App</strong> - If using an APK, enable "Install unknown apps" for your browser/file manager in Android settings, then open the APK to install. Grant storage permissions when prompted.</li>
+                <li><strong>Launch RetroArch</strong> - Open the app.</li>
+                <li><strong>Update Core Info & Assets</strong> - Go to `Main Menu` -> `Online Updater`. Tap `Update Core Info Files`, `Update Assets`, `Update Controller Profiles`, and `Update Databases`.</li>
+                <li><strong>Download Cores</strong> - In the `Online Updater`, select `Core Downloader`. Choose and download the cores for the systems you wish to emulate.</li>
+                <li><strong>Configure Input (Optional)</strong> - RetroArch often works well with touch controls and detects gamepads automatically. You can customize overlays in `Settings` -> `On-Screen Display` -> `On-Screen Overlay`, or configure controllers in `Settings` -> `Input`.</li>
+                <li><strong>Scan for Games (ROMs)</strong> - Go to `Import Content` -> `Scan Directory`. Navigate to your ROMs folder (often in device storage or SD card) and select `<Scan This Directory>`.</li>
+                <li><strong>Load Game</strong> - Access your games via the system playlists on the main menu, or use `Load Content` to manually find a ROM file. Select the game and choose the core to use.</li>
+            </ol>
+            <p><strong>Recommended:</strong> A physical Bluetooth or USB-OTG gamepad significantly improves the gaming experience on Android.</p>
+             <a href="https://www.retroarch.com/index.php?page=platforms" class="download-button" id="retroarch-android-download">Download RetroArch for Android</a> </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <h3>What are RetroArch "Cores"?</h3>
+            <p>Cores are essentially the emulators themselves, packaged as plugins (Libretro libraries) that RetroArch uses as a frontend. You need to download the specific core for each system you want to emulate (e.g., an SNES core, a Genesis core, etc.).</p>
+
+            <h3>Do I need BIOS files for RetroArch?</h3>
+            <p>Some cores, particularly for CD-based systems (like PlayStation, Sega CD, Saturn) or some arcade machines, require specific BIOS files to function correctly. These BIOS files must be obtained legally and placed in RetroArch's 'system' directory (check Settings -> Directory -> System/BIOS).</p>
+
+            <h3>Is RetroArch available on other platforms?</h3>
+            <p>Yes, RetroArch is highly portable and available for many platforms besides PC and Android, including iOS, Raspberry Pi, game consoles (like PS Vita, Switch - often requires homebrew), web browsers, and more.</p>
+
+             <h3>Is RetroArch free?</h3>
+            <p>Yes, RetroArch and the vast majority of Libretro cores are free and open-source.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+        </div>
+        <p>&copy; 2025 ROM Central.</p>
+    </footer>
+
+
+    <div class="ad-banner-right" aria-label="Advertisement">Ad Space</div>
+
+    <script>
+        // Ad dismissal script
+        const dismissButton = document.getElementById('dismissAdButton');
+        if (dismissButton) {
+            dismissButton.addEventListener('click', function() {
+                const adBannerLeft = document.getElementById('adBannerLeft');
+                if (adBannerLeft) {
+                    adBannerLeft.classList.add('hidden');
+                }
+            });
+        }
+
+        // Placeholder for theme toggle or other JS from script.js
+        const themeToggleButton = document.getElementById('theme-toggle');
+        if (themeToggleButton) {
+             themeToggleButton.textContent = ''; // Example
+             // Add theme toggle logic here
+        }
+    </script>
+</body>
+</html>

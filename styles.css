@@ -1,0 +1,453 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+    color: #222;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+body.dark-theme {
+    background-color: #1a1a1a;
+    color: #f4f4f4;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+	
+    background-color: #222;
+    color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Logo */
+.logo-container {
+    display: flex;
+    align-items: center;
+	list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: transparent;
+}
+
+.logo {
+    height: 40px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+/* Toggle Switch */
+#theme-toggle {
+    width: 50px;
+    height: 25px;
+    background: linear-gradient(45deg, #ff9a9e, #fad0c4);
+    border-radius: 25px;
+    position: relative;
+    cursor: pointer;
+    transition: background 0.3s ease-in-out;
+    border: none;
+}
+
+#theme-toggle::before {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: white;
+    border-radius: 50%;
+    top: 50%;
+    left: 3px;
+    transform: translateY(-50%);
+    transition: transform 0.3s ease-in-out;
+}
+
+body.dark-theme #theme-toggle {
+    background: linear-gradient(45deg, #2a2a72, #009ffd);
+}
+
+body.dark-theme #theme-toggle::before {
+    transform: translate(25px, -50%);
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background-color: transparent;
+}
+
+nav ul li {
+    padding: 1em;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul li:hover {
+    transform: scale(1.1);
+}
+
+nav ul li a {
+    color: #222;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+body.dark-theme nav ul li a {
+    color: #f4f4f4;
+}
+
+main {
+    padding: 40px;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.ad-banner, .ad-footer {
+    background: #e0e0e0;
+    padding: 15px;
+    text-align: center;
+    margin-top: 20px;
+    border-radius: 8px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.ad-banner:hover, .ad-footer:hover {
+    transform: translateY(-5px);
+}
+
+.dark-theme .ad-banner, .dark-theme .ad-footer {
+    background: #444;
+}
+
+/* Emulator Grid */
+.console-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+}
+
+.console-item {
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.console-item:hover {
+    transform: translateY(-5px);
+}
+
+.console-item img {
+    width: 100px;
+    height: auto;
+    margin-bottom: 10px;
+}
+
+.console-item p {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.emulator-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 10px;
+    background: linear-gradient(45deg, #ff7e5f, #feb47b);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out, background 0.3s ease-in-out;
+}
+
+.download-button:hover {
+    background: linear-gradient(45deg, #ff6a3d, #ffb74d);
+    transform: scale(1.1);
+}
+
+/* Ensure the grid layout for the NES page */
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+/* Style each game card */
+.game-card {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+}
+
+/* Core game cover styling */
+.game-cover {
+    width: 100%; /* Make the image responsive */
+    max-width: 250px; /* Adjust the size of the cover image */
+    height: auto; /* Allow the height to scale proportionally */
+    object-fit: cover; /* Ensure it fits without distortion */
+    border-radius: 8px;
+    display: block;
+    margin: 0 auto; /* Center the image */
+}
+
+@media (max-width: 600px) {
+    .game-cover {
+        max-width: 200px; /* Adjust for mobile */
+    }
+}
+
+
+/* Style game links */
+.game-link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    padding: 20px;
+    justify-content: center;
+}
+
+.game-card {
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    transition: transform 0.3s ease-in-out;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+}
+
+.game-cover {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 5px;
+}
+
+.game-link {
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #007bff;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background 0.3s;
+}
+
+.download-button:hover {
+    background: #0056b3;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: var(--bg-color, #f4f4f4);
+    color: var(--text-color, #333);
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: #222;
+    color: white;
+}
+
+.logo {
+    height: 50px;
+}
+
+.content-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 20px;
+    padding: 20px;
+}
+
+.game-details {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.game-details img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.related-games {
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.game-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 10px;
+}
+
+.game-card {
+    text-align: center;
+    background: #fafafa;
+    padding: 10px;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.game-card:hover {
+    transform: scale(1.05);
+}
+
+.game-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.download-btn {
+    display: inline-block;
+    padding: 10px 15px;
+    background: #ff5722;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.download-btn:hover {
+    background: #e64a19;
+}
+
+.ad-space {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background: #ddd;
+    padding: 15px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+footer {
+    text-align: center;
+    padding: 15px;
+    background: #222;
+    color: white;
+    margin-top: 20px;
+}
+
+@media (max-width: 768px) {
+    .content-container {
+        grid-template-columns: 1fr;
+    }
+
+    .ad-space {
+        position: static;
+        margin-top: 20px;
+    }
+}
+
+.game-cover {
+    width: 300px; /* Adjust as needed */
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.nav-tabs {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 8px;
+}
+
+.nav-tabs li {
+    display: inline;
+}
+
+.nav-tabs a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+}
+
+.nav-tabs a:hover {
+    background: #555;
+}
+
+.dark-theme {
+    background-color: #222;
+    color: white;
+}
+
+.dark-theme header,
+.dark-theme footer {
+    background-color: #111;
+}
+
+.dark-theme a {
+    color: #4CAF50; /* Green for links */
+}
+
+.dark-theme .game-card {
+    background: #333;
+    color: white;
+}
+

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact & Donate - ROM Central</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<style>
+/* Ensure the page takes full height */
+html, body {
+    height: 100%;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Make main content expand to push the footer down */
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+/* Fixed footer styling */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    width: 100%;
+    position: bottom;
+    bottom: 0;
+    left: 0;
+}
+
+</style>
+<body>
+
+<header>
+    <a href="index.html" class="logo-container">
+        <img src="logo.png" alt="ROM Central Logo" class="logo">
+    </a>
+</header>
+<style>
+.donate-btn {
+    display: inline-block;
+    background-color: #0070ba; /* PayPal blue */
+    color: white;
+    padding: 12px 20px;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.donate-btn:hover {
+    background-color: #005ea6; /* Darker PayPal blue */
+}
+
+</style>
+<main>
+    <h1>Donate & Support</h1>
+    <p>If you’d like to support ROM Central, consider donating through PayPal or TON cryptocurrency.</p>
+
+    <!-- PayPal Donation Button -->
+    <h2>Donate with PayPal</h2>
+    <p>Click the button below to donate via PayPal:</p>
+    <a href="https://paypal.me/romcentral?country.x=PH&locale.x=en_US" target="_blank" class="donate-btn">Donate with PayPal</a>
+
+    <!-- TON Donation Section with QR Code -->
+    <h2>Donate with TON</h2>
+    <p>Scan the QR code below to donate TON:</p>
+    <img src="images/ton-qr.png" alt="TON Donation QR Code" width="200">
+    <p>Or send manually to: <strong>UQAsEDj9PJvFUiQu7EXUCeghdiX6ZJFPW0Ug2ZSEWgX47ZNv</strong></p>
+	
+	    <h1>Contact Us</h1>
+    <p>If you have any questions, suggestions, or need support, feel free to reach out to us:</p>
+    <ul>
+        <li>Email: <a href="romcentralcontact@gmail.com">romcentralcontact@gmail.com</a></li>
+        <li>Twitter: <a href="https://x.com/RomCentralX" target="_blank">@RomCentralX</a></li>
+    </ul>
+</main>
+
+<footer>
+    <p>&copy; 2025 ROM Central | <a href="terms.html">Terms of Service</a></p>
+</footer>
+
+</body>
+</html>

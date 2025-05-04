@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROM Central - Emulators</title>
+    <link rel="stylesheet" href="styles.css">
+	<script defer src="script.js"></script>
+    <style>
+        /* Reset body and html to ensure full height */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+
+
+        .ad-banner-left, .ad-banner-right {
+            position: fixed;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            z-index: 1000;
+        }
+
+        .ad-banner-left {
+            bottom: 20px;
+            left: 20px;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+        }
+
+        .ad-banner-right {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        /* Hide the ad banner when dismissed */
+        .hidden {
+            display: none !important;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+			        .footer-links {
+            margin-bottom: 15px;
+        }
+        .footer-links a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="ROM Central Logo" class="logo">
+        </a>
+		        <button id="theme-toggle"></button>
+    </header>
+    
+    <nav>
+        <ul>
+            <li><a href="roms.html">ROMs</a></li>
+            <li><a href="emulators.html">Emulators</a></li>
+            <li><a href="bios.html">Mobile Games</a></li>
+            <li><a href="rom-packs.html">ROM Packs</a></li>
+			 <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+    
+    <main>
+        <h1>Choose Your Console Emulator</h1>
+        <div class="console-grid">
+            <div class="console-item">
+                <img src="images/nes.png" alt="NES">
+                <p>Nintendo NES</p>
+                <div class="emulator-list">
+                    <a href="NostalgiaNES.html" class="download-button">Download NostalgiaNES</a>
+                    <a href="retroarch.html" class="download-button">Download RetroArch</a>
+                </div>
+            </div>
+			            <div class="console-item">
+                <img src="images/snes.png" alt="SNES">
+                <p>Super Nintendo</p>
+                <div class="emulator-list">
+                    <a href="SNES9x.html" class="download-button">Download SNES9x</a>
+                    <a href="retroarch.html" class="download-button">Download RetroArch</a>
+                </div>
+            </div>
+            <div class="console-item">
+                <img src="images/gameboy.png" alt="Game Boy">
+                <p>Game Boy</p>
+                <div class="emulator-list">
+                    <a href="retroarch.html" class="download-button">Download RetroArch</a>
+                    <a href="visual boy.html" class="download-button">Download Visual Boy</a>
+                </div>
+            </div>
+            <div class="console-item">
+                <img src="images/gba.png" alt="GBA">
+                <p>Game Boy Advance</p>
+                <div class="emulator-list">
+                    <a href="retroarch.html" class="download-button">Download RetroArch</a>
+                    <a href="visual boy.html" class="download-button">Download Visual Boy</a>
+                </div>
+            </div>
+            <div class="console-item">
+                <img src="images/n64.png" alt="N64">
+                <p>Nintendo 64</p>
+                <div class="emulator-list">
+                    <a href="project 64.html" class="download-button">Download Project 64</a>
+                    <a href="mupen6.html" class="download-button">Download Mupen64</a>
+                </div>
+            </div>
+            <div class="console-item">
+                <img src="images/gamecube.png" alt="GameCube">
+                <p>GameCube</p>
+                <div class="emulator-list">
+                    <a href="dolphin.html" class="download-button">Download Dolphin</a>
+                </div>
+            </div>
+            <div class="console-item">
+                <img src="images/genesis.png" alt="Sega Genesis">
+                <p>Sega Genesis</p>
+                <div class="emulator-list">
+                    <a href="retroarch.html" class="download-button">Download RetroArch</a>
+                </div>
+            </div>
+            <div class="console-item">
+                <img src="images/saturn.png" alt="Sega Saturn">
+                <p>Sega Saturn</p>
+                <div class="emulator-list">
+                    <a href="Yaba Sanshiro.html" class="download-button">Download Yaba Sanshiro </a>
+                    <a href="retroarch.html" class="download-button">Download RetroArch</a>
+                </div>
+            </div>
+            <div class="console-item">
+                <img src="images/dreamcast.png" alt="Dreamcast">
+                <p>Sega Dreamcast</p>
+                <div class="emulator-list">
+                    <a href="Redream.html" class="download-button">Download Redream</a>
+                </div>
+            </div>
+            <div class="console-item">
+                <img src="images/ps1.png" alt="PS1">
+                <p>PlayStation 1</p>
+                <div class="emulator-list">
+                    <a href="ePSXe.html" class="download-button">Download ePSXe</a>
+                    <a href="retroarch.html" class="download-button">Download RetroArch</a>
+                    <a href="DuckStation.html" class="download-button">Download DuckStation</a>
+                </div>
+            </div>
+            <div class="console-item">
+                <img src="images/ps2.png" alt="PS2">
+                <p>PlayStation 2</p>
+                <div class="emulator-list">
+                    <a href="AetherSX2.html" class="download-button">Download AetherSX2</a>
+                    <a href="PCSX2.html" class="download-button">Download PCSX2</a>
+                </div>
+            </div>
+            <div class="console-item">
+                <img src="images/ps3.png" alt="PS3">
+                <p>PlayStation 3</p>
+                <div class="emulator-list">
+                    <a href="RPCS3.html" class="download-button">Download RPCS3</a>
+                    <a href="APS3e.html" class="download-button">Download APS3e</a>
+                </div>
+            </div>
+            <div class="console-item">
+                <img src="images/psp.png" alt="PSP">
+                <p>PlayStation Portable</p>
+                <div class="emulator-list">
+                    <a href="ppsspp.html" class="download-button">Download PPSSPP</a>
+                    <a href="retroarch.html" class="download-button">Download RetroArch</a>
+                </div>
+            </div>
+            <div class="console-item">
+                <img src="images/psvita.png" alt="PS Vita">
+                <p>PlayStation Vita</p>
+                <div class="emulator-list">
+                    <a href="Vita3K.html" class="download-button">Download Vita3K</a>
+                </div>
+            </div>
+ 
+            <!-- More console items here... -->
+        </div>
+    </main>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+        </div>
+        <p>&copy; 2025 ROM Central.</p>
+    </footer>
+    
+    <div id="adBannerLeft">
+        <button id="dismissAdButton">X</button>
+        <div class="ad-banner-left">Vertical Ad Space</div>
+    </div>
+    <div class="ad-banner-right">Ad Space</div>
+
+    <script>
+        document.getElementById('dismissAdButton').addEventListener('click', function() {
+            document.getElementById('adBannerLeft').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

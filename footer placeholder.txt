@@ -1,0 +1,33 @@
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+        </div>
+        <p>&copy; 2025 ROM Central. All game trademarks and copyrights are property of their respective owners.</p>
+    </footer>
+	
+	    .footer-links {
+            margin-bottom: 15px;
+        }
+        .footer-links a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+	
+         
+	            <h2>Gameplay</h2>
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/exampleAndroid" frameborder="0" allowfullscreen></iframe>
+			<h3>Download Pokémon ROM – NES ROMs</h3>
+			<br>
+			<h3> <li><a href="index.html">Alternative Link 1</a></li>
+			 <li><a href="index.html">Alternative Link 2</a></li></h3>
+	•	
+<img src="https://www.konami.com/products_master/eu_publish/mgs_mc1/eu/en/images/metal_gear_solid.jpg" style="width:100%; max-width:600px; height:auto;" loading="lazy" alt="Image">
+
+
+ <h4>2. Final Fantasy VII (1997)</h4>
+Mobile Games
+
+png

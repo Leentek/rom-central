@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Redream - Sega Dreamcast Emulator Setup Guide | ROM Central</title>
+    <meta name="description" content="Download and set up the Redream emulator for PC (Windows, Mac, Linux), Android, and Raspberry Pi. Play Sega Dreamcast games easily, BIOS optional.">
+    <meta name="keywords" content="Redream download, Dreamcast emulator, Sega Dreamcast emulator, Redream setup, play Dreamcast games, Redream Android, Redream PC, Dreamcast BIOS optional, GDI, CDI, CHD">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="YOUR_REDREAM_PAGE_URL"> <meta property="og:title" content="Redream - Sega Dreamcast Emulator Setup Guide | ROM Central">
+    <meta property="og:description" content="Easy setup guide for Redream, a user-friendly Sega Dreamcast emulator for PC, Mac, Linux, and Android. BIOS file is optional but recommended.">
+    <meta property="og:image" content="YOUR_REDREAM_PREVIEW_IMAGE.jpg"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="YOUR_REDREAM_PAGE_URL"> <meta property="twitter:title" content="Redream - Sega Dreamcast Emulator Setup Guide | ROM Central">
+    <meta property="twitter:description" content="Easy setup guide for Redream, a user-friendly Sega Dreamcast emulator for PC, Mac, Linux, and Android. BIOS file is optional but recommended.">
+    <meta property="twitter:image" content="YOUR_REDREAM_PREVIEW_IMAGE.jpg"> <link rel="canonical" href="YOUR_REDREAM_PAGE_URL"> <link rel="icon" href="/favicon.ico" type="image/x-icon"> <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Install and Set Up Redream (Sega Dreamcast Emulator)",
+      "description": "Guide to installing the Redream emulator on PC and Android, adding games, and optionally adding a BIOS file.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Download Redream",
+          "text": "Get the latest version (Lite or purchase Premium) for your platform (Windows, macOS, Linux, Android) from the official Redream website (redream.io).",
+          "url": "YOUR_REDREAM_PAGE_URL#download"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Install / Extract Redream",
+           "itemListElement": [
+            {"@type": "HowToStep", "name": "PC:", "text": "Extract the downloaded archive into a dedicated folder."},
+            {"@type": "HowToStep", "name": "Android:", "text": "Install the app from the Play Store or downloaded APK (enable 'Install unknown apps' if needed)."}
+          ]
+        },
+         {
+          "@type": "HowToStep",
+          "name": "Run Redream & Add Game Library",
+          "text": "Launch Redream. On first launch, or via the 'Library' tab, click 'Add Directory' and select the folder containing your Dreamcast game files (GDI, CDI, CHD, etc.)."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Configure Input & Video",
+          "text": "Go to the 'Input' tab to map your gamepad or keyboard. Go to the 'Video' tab to set options like window size/fullscreen, aspect ratio, and polygon sort accuracy. (Note: Resolution scaling requires Premium)."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Add BIOS (Optional but Recommended)",
+          "text": "Obtain a Dreamcast BIOS file (`boot.bin` or `dc_boot.bin`) legally. On PC, place it in a 'bios' subfolder within your Redream directory. On Android, place it in the location specified in Redream's System settings. Redream will use its internal HLE BIOS if none is found."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Load Game",
+          "text": "Go to the 'Library' tab. Your scanned games should appear with artwork. Click on a game to start playing."
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="styles.css"> <script defer src="script.js"></script> <style>
+        /* Using refined styles, Dreamcast orange theme */
+        html, body { height: 100%; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        header { /* Add header styles if needed from styles.css */ }
+        nav { /* Add nav styles if needed from styles.css */ }
+        nav ul { list-style: none; padding: 0; margin: 0; text-align: center; /* Example */ /* Add more nav styles */ }
+        nav li { display: inline-block; /* Example */ margin: 0 15px; /* Example */ /* Add more nav styles */ }
+        nav a { text-decoration: none; color: #007bff; /* Example */ /* Add nav link styles */ }
+        nav a:hover, nav a[aria-current="page"] { text-decoration: underline; font-weight: bold; /* Example */ }
+
+        main { padding: 20px; max-width: 1200px; margin: 0 auto; padding-bottom: 80px; /* Ensure footer doesn't overlap content */ }
+        h1 { color: #ff6600; /* Dreamcast Orange */ text-align: center; margin-bottom: 30px; font-size: 2.2em; }
+        h2 { color: #333; border-bottom: 2px solid #ff6600; /* Dreamcast Orange */ padding-bottom: 5px; margin-top: 40px; }
+        section { margin-bottom: 50px; background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+         .optional-note { background-color: #e2e3e5; border-left: 5px solid #b8daff; padding: 10px; margin-bottom: 20px; } /* Style for optional note */
+         .video-container { position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0; overflow: hidden; max-width: 100%; background: #000; margin: 20px auto; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .download-button { display: inline-block; background-color: #ff6600; /* Dreamcast Orange */ color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; transition: background-color 0.3s; border: none; cursor: pointer; }
+        .download-button:hover { background-color: #cc5200; /* Darker Orange */ }
+        ol { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        #faq h3 { margin-top: 25px; color: #444; }
+
+        footer { background-color: #333; color: white; text-align: center; padding: 15px 10px; position: relative; bottom: 0; width: 100%; margin-top: 40px; box-sizing: border-box; }
+        .footer-links { margin-bottom: 10px; }
+        .footer-links a { color: #fff; margin: 0 10px; text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; }
+
+        .ad-banner-left, .ad-banner-right { position: fixed; background-color: #333; color: white; padding: 10px; font-size: 1.2em; border-radius: 8px; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .ad-banner-left { bottom: 20px; left: 20px; writing-mode: vertical-rl; transform: rotate(180deg); }
+        #adBannerLeft button { position: absolute; top: -5px; right: -25px; background: #555; color: white; border: none; border-radius: 50%; cursor: pointer; font-size: 0.8em; width: 20px; height: 20px; line-height: 20px; text-align: center; transform: rotate(180deg); writing-mode: horizontal-tb; }
+        .ad-banner-right { bottom: 20px; right: 20px; }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-container" aria-label="ROM Central Home">
+            <img src="logo.png" alt="ROM Central Logo" class="logo"> </a>
+        <button id="theme-toggle" aria-label="Toggle theme"></button>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="roms.html">ROMs</a></li>
+            <li><a href="emulators.html" aria-current="page">Emulators</a></li> <li><a href="bios.html">Mobile Games</a></li>
+            <li><a href="rom-packs.html">ROM Packs</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Redream - Sega Dreamcast Emulator Setup Guide</h1>
+
+         <div class="optional-note">
+            <strong>Note:</strong> Redream is designed for ease of use and can run many Dreamcast games without needing an official BIOS file (it uses High-Level Emulation - HLE). However, for the best compatibility, using an official Dreamcast BIOS (`boot.bin` or `dc_boot.bin`, obtained legally from your console) is recommended. Redream also offers a paid 'Premium' version for features like HD rendering.
+        </div>
+
+        <section id="pc-installation">
+            <h2>PC Setup Guide (Windows, macOS, Linux)</h2>
+             <p>Redream offers a simple setup process on desktop operating systems.</p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="ACTUAL_YOUTUBE_EMBED_URL_REDREAM_PC" title="Redream PC Installation & Setup Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <ol>
+                <li><strong>Download Redream</strong> - Visit the official Redream website (redream.io) and download the latest version for your OS (Windows, macOS, or Linux). Choose Lite (free) or purchase Premium.</li>
+                <li><strong>Extract Files</strong> - Redream comes as an archive (`.zip`, etc.). Extract its contents into a dedicated folder. No installation is usually required.</li>
+                <li><strong>Run Redream</strong> - Open the folder and launch the `redream` executable.</li>
+                <li><strong>Add Game Library</strong> - On the first launch or by going to the `Library` tab, click `ADD DIRECTORY` and select the folder where you store your Dreamcast game files (common formats include GDI, CDI, CHD). Redream will scan the folder.</li>
+                 <li><strong>Configure Input</strong> - Go to the `Input` tab. Select your controller type (XInput for Xbox controllers, DirectInput for others, or Keyboard). Map the Dreamcast controller buttons and analog stick to your device.</li>
+                 <li><strong>Configure Video</strong> - Go to the `Video` tab. Set the desired window mode (Windowed/Fullscreen), aspect ratio, and polygon sort accuracy. If you have Premium, you can increase the `Game Resolution`.</li>
+                 <li><strong>Add BIOS (Optional)</strong> - If you have a legally obtained Dreamcast BIOS file (`boot.bin` or `dc_boot.bin`), create a subfolder named `bios` inside your main Redream folder and place the file there. Redream should detect it automatically.</li>
+                <li><strong>Launch Game</strong> - Go to the `Library` tab. Click on the artwork of the game you want to play.</li>
+            </ol>
+            <p><strong>System Requirements (PC):</strong> Requires a graphics card supporting OpenGL 3.3 or higher. Generally less demanding than GameCube/Wii emulation; a multi-core CPU from the last 8-10 years and 4GB+ RAM should suffice for the Lite version. Premium features like HD rendering require a more capable GPU.</p>
+            <a href="https://redream.io/" class="download-button" id="redream-pc-download">Download Redream for PC</a> </section>
+
+        <section id="android-installation">
+            <h2>Android Setup Guide</h2>
+             <p>Redream is also available for Android devices, offering good performance on capable hardware.</p>
+            <div class="video-container">
+                 <iframe width="560" height="315" src="ACTUAL_YOUTUBE_EMBED_URL_REDREAM_ANDROID" title="Redream Android Installation & Setup Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+             <ol>
+                <li><strong>Download Redream</strong> - Install 'Redream' from the Google Play Store or download the APK from the official website (redream.io). Choose Lite or purchase Premium.</li>
+                <li><strong>Install the App</strong> - Install via the Play Store or open the downloaded APK (enable "Install unknown apps" in Android settings if needed).</li>
+                <li><strong>Grant Permissions</strong> - Launch Redream and grant storage permissions when prompted.</li>
+                <li><strong>Add Game Library</strong> - In the `Library` tab, tap `ADD DIRECTORY` and navigate to the folder on your device storage containing your Dreamcast games.</li>
+                <li><strong>Configure Input</strong> - Go to the `Input` tab. Configure the on-screen touch controls or map a connected Bluetooth/USB gamepad.</li>
+                 <li><strong>Configure Video</strong> - Go to the `Video` tab. Adjust settings like aspect ratio. If you have Premium, you can increase the `Game Resolution`.</li>
+                 <li><strong>Add BIOS (Optional)</strong> - Obtain your Dreamcast BIOS file (`boot.bin`). Check Redream's `System` settings tab for the expected location (it might be a specific folder in internal storage) and place the file there using a file manager app.</li>
+                <li><strong>Launch Game</strong> - Go to the `Library` tab and tap the game you wish to play.</li>
+            </ol>
+            <p><strong>System Requirements (Android):</strong> Requires Android 5.0+ and OpenGL ES 3.2 support. Performance varies; mid-range devices might handle many games well at native resolution, while higher-end devices (Snapdragon 7xx/8xx or equivalent) are better for smoother performance and potentially HD resolution (with Premium).</p>
+             <a href="https://redream.io/" class="download-button" id="redream-android-download">Download Redream for Android</a> </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <h3>What's the difference between Redream Lite and Premium?</h3>
+            <p>Redream Lite is free and allows playing games at the Dreamcast's native resolution (640x480). Redream Premium is a one-time purchase that unlocks high-definition rendering (upscaling), more save slots per game, and supports the developers.</p>
+
+            <h3>Do I really need the Dreamcast BIOS?</h3>
+            <p>No, Redream includes a built-in High-Level Emulation (HLE) BIOS that allows most games to boot and play. However, using an official BIOS dumped from your own console can improve compatibility with certain games and ensure the original boot animation/menu appears.</p>
+
+            <h3>What game formats does Redream support?</h3>
+            <p>Redream supports common Dreamcast disc image formats, including GDI (preferred for accuracy), CDI, CHD (compressed, recommended for saving space), and CUE/BIN.</p>
+
+            <h3>Is Redream easy to set up?</h3>
+            <p>Yes, Redream is generally considered one of the easiest Dreamcast emulators to set up and use, especially since the BIOS is optional and configuration options are straightforward.</p>
+
+            <h3>How does Redream compare to Flycast?</h3>
+            <p>Both Redream and Flycast (a popular Libretro core and standalone emulator based on Reicast) are excellent Dreamcast emulators. Redream is often praised for its simplicity and performance out-of-the-box. Flycast might offer more advanced configuration options, features like networking via RetroArch, and slightly different compatibility profiles. Trying both can be beneficial.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+        </div>
+        <p>&copy; 2025 ROM Central.</p>
+    </footer>
+
+
+    <div class="ad-banner-right" aria-label="Advertisement">Ad Space</div>
+
+    <script>
+        // Ad dismissal script
+        const dismissButton = document.getElementById('dismissAdButton');
+        if (dismissButton) {
+            dismissButton.addEventListener('click', function() {
+                const adBannerLeft = document.getElementById('adBannerLeft');
+                if (adBannerLeft) {
+                    adBannerLeft.classList.add('hidden');
+                }
+            });
+        }
+
+        // Placeholder for theme toggle or other JS from script.js
+        const themeToggleButton = document.getElementById('theme-toggle');
+        if (themeToggleButton) {
+             themeToggleButton.textContent = ''; // Example
+             // Add theme toggle logic here
+        }
+    </script>
+</body>
+</html>

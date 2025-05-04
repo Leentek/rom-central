@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Game Details - ROM Central</title>
+    <link rel="stylesheet" href="styles.css">
+
+<style>
+    /* General Styles */
+    body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        color: #333;
+        transition: background-color 0.3s, color 0.3s;
+    }
+
+    /* Main container for content */
+    .content-container {
+        width: 100%;
+        max-width: 1200px;
+        margin: 0 auto;
+        padding: 20px;
+    }
+
+    /* Game details section */
+    .game-details {
+        background: #fff;
+        border-radius: 8px;
+        padding: 20px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        text-align: center;
+        margin-bottom: 40px;
+    }
+
+    .game-title {
+        font-size: 2em;
+        font-weight: bold;
+        margin-top: 20px;
+        color: #333;
+    }
+
+    .game-info {
+        font-size: 1.2em;
+        color: #555;
+        margin: 10px 0;
+    }
+
+    .game-description {
+        text-align: left;
+        font-size: 1em;
+        color: #333;
+        margin-top: 20px;
+    }
+
+    /* Game cover and overlay */
+    .game-cover-container {
+        position: relative;
+        display: inline-block;
+        max-width: 300px;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+
+    .game-cover {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+    }
+
+    .game-cover-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.5);
+        border-radius: 8px;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .game-cover-container:hover .game-cover-overlay {
+        opacity: 1;
+    }
+
+    .download-btn {
+        padding: 15px 30px;
+        background-color: #4CAF50;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-size: 1.2em;
+        margin-top: 20px;
+        transition: background-color 0.3s;
+    }
+
+    .download-btn:hover {
+        background-color: #45a049;
+    }
+
+    /* Related games section */
+    .related-section {
+        margin-top: 20px;  /* Adjusted margin-top */
+        background: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    .related-section h2 {
+        font-size: 1.8em;
+        margin-bottom: 20px;
+        color: #333;
+    }
+
+    /* Grid layout for related games */
+    .related-games {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr)); /* Smaller cards */
+        gap: 10px;
+        justify-items: center;
+    }
+
+    .related-game-card {
+        width: 100%;
+        text-align: center;
+        background: #f9f9f9;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+
+    .related-game-card:hover {
+        transform: scale(1.05);
+    }
+
+    .related-game-card img {
+        width: 100%;
+        height: 80px;  /* Smaller height for smaller images */
+        object-fit: cover;
+    }
+
+    .related-game-card h3 {
+        margin: 10px 0;
+        font-size: 1em;  /* Smaller text */
+        color: #333;
+    }
+
+    /* Loading spinner */
+    .loading {
+        display: inline-block;
+        width: 20px;
+        height: 20px;
+        border: 3px solid rgba(0, 0, 0, .3);
+        border-radius: 50%;
+        border-top-color: #000;
+        animation: spin 1s ease-in-out infinite;
+        margin-right: 10px;
+    }
+
+    @keyframes spin {
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    /* Mobile responsiveness */
+    @media (max-width: 600px) {
+        .game-cover-container {
+            max-width: 200px;
+        }
+
+        .game-title {
+            font-size: 1.5em;
+        }
+
+        .game-info {
+            font-size: 1em;
+        }
+
+        .download-btn {
+            padding: 12px 20px;
+            font-size: 1em;
+        }
+
+        /* Adjust the related games section on mobile */
+        .related-section {
+            margin-top: 10px;  /* Reduced margin-top on mobile */
+        }
+    }
+
+/* Ad banner positioning below related games */
+.ad-banner {
+    margin-top: 20px;
+    background-color: #333;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+    text-align: center;
+    width: 100%;
+    height: 150px; /* Adjusted height to make it square-like */
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+    border-radius: 8px; /* Rounded corners for the banner */
+    z-index: 1000;
+}
+
+.ad-banner a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Optional: To make the content inside the banner more centered */
+.ad-banner p {
+    width: 100%;
+    font-size: 1.2em;
+    text-align: center;
+}
+
+</style>
+
+
+
+</head>
+<body class="light-mode">
+    <header>
+        <div class="logo-container">
+            <a href="index.html"><img src="logo.jpg" alt="ROM Central Logo" class="logo"></a>
+        </div>
+    </header>
+
+    <main class="content-container">
+        <div class="game-details" id="game-details">
+            <div class="loading">Loading game details...</div>
+        </div>
+
+        <div class="related-section">
+            <h2>Related Games</h2>
+            <div class="related-games" id="related-games-list">
+                <!-- Related games will be dynamically injected here -->
+            </div>
+			        <!-- Add the ad banner below the related games -->
+    <div class="ad-banner">
+        <p>Sponsored Ad - <a href="https://example.com" target="_blank">Check this out!</a></p>
+    </div>
+        </div>
+
+	</main>
+
+
+    <footer>
+        <p>&copy; 2025 ROM Central. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const gameId = urlParams.get("id");
+
+            if (!gameId) {
+                document.getElementById("game-details").innerHTML = 
+                    '<p class="error-message">No game selected. Please go back and select a game.</p>';
+                return;
+            }
+
+            // Show loading state
+            document.getElementById("game-details").innerHTML = 
+                '<div class="loading">Loading game details...</div>';
+
+            // Fetch game details
+            fetch(`http://localhost:3000/games/${gameId}`)
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Game not found');
+                    }
+                    return response.json();
+                })
+                .then(game => {
+                    displayGameDetails(game);
+                    return fetch("http://localhost:3000/games");
+                })
+                .then(response => response.json())
+                .then(allGames => {
+                    const currentGame = allGames.find(g => g.id == gameId);
+                    if (currentGame) {
+                        displayRelatedGames(allGames, currentGame);
+                    }
+                })
+                .catch(error => {
+                    console.error("Error:", error);
+                    document.getElementById("game-details").innerHTML = 
+                        `<p class="error-message">${error.message || 'Failed to load game details'}</p>`;
+                });
+        });
+
+        function displayGameDetails(game) {
+            const gameDetails = document.getElementById("game-details");
+            gameDetails.innerHTML = `
+                <div class="game-cover-container">
+                    <img src="${game.cover}" alt="${game.title}" class="game-cover" 
+                         onerror="this.src='https://via.placeholder.com/250?text=No+Image'">
+                    <div class="game-cover-overlay"></div>
+                </div>
+                <h1 class="game-title">${game.title}</h1>
+                <p class="game-info"><strong>Platform:</strong> ${game.platform}</p>
+                <p class="game-info"><strong>Genre:</strong> ${game.genre.join(", ")}</p>
+                <p class="game-description">${game.description || 'No description available'}</p>
+                <a href="${game.download}" class="download-btn" target="_blank">Download ROM</a>
+            `;
+        }
+
+        function displayRelatedGames(allGames, currentGame) {
+            const relatedGamesContainer = document.getElementById("related-games-list");
+
+            const relatedGames = allGames.filter(game => 
+                (game.platform === currentGame.platform || 
+                 game.genre.some(genre => currentGame.genre.includes(genre))) &&
+                game.id != currentGame.id
+            ).slice(0, 6);
+
+            if (relatedGames.length === 0) {
+                relatedGamesContainer.innerHTML = '<p>No related games found</p>';
+                return;
+            }
+
+            relatedGamesContainer.innerHTML = '';
+            relatedGames.forEach(game => {
+                const gameCard = document.createElement("div");
+                gameCard.classList.add("related-game-card");
+                gameCard.innerHTML = `
+                    <a href="game.html?id=${game.id}">
+                        <img src="${game.cover}" alt="${game.title}" 
+                             onerror="this.src='https://via.placeholder.com/150?text=No+Image'">
+                        <h3>${game.title}</h3>
+                    </a>
+                `;
+                relatedGamesContainer.appendChild(gameCard);
+            });
+        }
+    </script>
+</body>
+</html>

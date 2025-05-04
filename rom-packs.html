@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROM Central - ROM Packs</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        /* Reset body and html to ensure full height */
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        .ad-banner-left, .ad-banner-right {
+            position: fixed;
+            background-color: #333;
+            color: white;
+            padding: 10px;
+            font-size: 1.2em;
+            border-radius: 8px;
+            z-index: 1000;
+        }
+
+        .ad-banner-left {
+            bottom: 20px;
+            left: 20px;
+            writing-mode: vertical-rl;
+            transform: rotate(180deg);
+        }
+
+        .ad-banner-right {
+            bottom: 20px;
+            right: 20px;
+        }
+
+        /* Hide the ad banner when dismissed */
+        .hidden {
+            display: none !important;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            z-index: 999;
+        }
+
+        .rom-pack-grid {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .rom-pack-item {
+            width: 30%;
+            margin: 15px;
+            text-align: center;
+        }
+
+        /* Resize the images for ROM packs */
+        .rom-pack-item img {
+            width: 150px;  /* Set the width to your desired size */
+            height: auto;  /* Maintain the aspect ratio */
+        }
+
+        .download-button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .download-button:hover {
+            background-color: #45a049;
+        }
+
+        main {
+            padding-bottom: 60px; /* Ensure the main content doesn't overlap with the footer */
+        }
+		        .footer-links {
+            margin-bottom: 15px;
+        }
+        .footer-links a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="ROM Central Logo" class="logo">
+        </a>
+        <button id="theme-toggle"></button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="roms.html">ROMs</a></li>
+            <li><a href="emulators.html">Emulators</a></li>
+            <li><a href="bios.html">Mobile Games</a></li>
+            <li><a href="rom-packs.html">ROM Packs</a></li>
+			 <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Choose Your ROM Pack</h1>
+        <div class="rom-pack-grid">
+            <div class="rom-pack-item">
+                <img src="images/pack.png" alt="NES ROM Pack">
+                <p>Nintendo NES ROM Pack</p>
+                <div class="download-buttons">
+                    <a href="https://archive.org/download/nintendo-entertainment-system-all-nes-roms-goodnes/All%20NES%20Roms%20%28GoodNES%29.zip" class="download-button">Download NES Pack</a>
+                    <a href="https://archive.org/download/nintendo-entertainment-system-all-nes-roms-goodnes/nintendo-entertainment-system-all-nes-roms-goodnes_archive.torrent" class="download-button">Download Torrent</a>
+                    <a href="https://tpi.li/6DTtAPzkIMs" class="download-button">Mirror Download</a>
+                </div>
+            </div>
+
+            <div class="rom-pack-item">
+                <img src="images/pack.png" alt="SNES ROM Pack">
+                <p>Super Nintendo ROM Pack</p>
+                <div class="download-buttons">
+                    <a href="https://archive.org/compress/street-fighter-alpha-2-usa_20250412/formats=ZIP&file=/street-fighter-alpha-2-usa_20250412.zip" class="download-button">Download SNES Pack</a>
+                    <a href="https://archive.org/download/street-fighter-alpha-2-usa_20250412/street-fighter-alpha-2-usa_20250412_archive.torrent" class="download-button">Download Torrent</a>
+                    <a href="https://tpi.li/5vJP8rMK683" class="download-button">Mirror Download</a>
+                </div>
+            </div>
+
+            <div class="rom-pack-item">
+                <img src="images/pack.png" alt="GBA ROM Pack">
+                <p>Game Boy Advance ROM Pack</p>
+                <div class="download-buttons">
+                    <a href="https://archive.org/download/GBAROMs/GBA_ROMs.zip" class="download-button">Download GBA Pack</a>
+                    <a href="https://archive.org/download/GBAROMs/GBAROMs_archive.torrent" class="download-button">Download Torrent</a>
+                    <a href="https://tpi.li/VcEjXqr1" class="download-button">Mirror Download</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+        </div>
+        <p>&copy; 2025 ROM Central.</p>
+    </footer>
+
+    <div id="adBannerLeft">
+        <button id="dismissAdButton">X</button>
+        <div class="ad-banner-left">Vertical Ad Space</div>
+    </div>
+    <div class="ad-banner-right">Ad Space</div>
+
+    <script>
+        document.getElementById('dismissAdButton').addEventListener('click', function() {
+            document.getElementById('adBannerLeft').classList.add('hidden');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Yaba Sanshiro 2 - Sega Saturn Emulator Setup Guide | ROM Central</title>
+    <meta name="description" content="Download and set up the Yaba Sanshiro 2 emulator for PC (Windows, Mac, Linux) and Android. Play Sega Saturn games - requires Saturn BIOS file.">
+    <meta name="keywords" content="Yaba Sanshiro 2 download, Sega Saturn emulator, Saturn emulator PC, Saturn emulator Android, Yabause fork, Yaba Sanshiro setup, Saturn BIOS required, play Saturn games">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="YOUR_YS2_PAGE_URL"> <meta property="og:title" content="Yaba Sanshiro 2 - Sega Saturn Emulator Setup Guide | ROM Central">
+    <meta property="og:description" content="Guide to setting up Yaba Sanshiro 2 on PC and Android to play Sega Saturn games. Includes BIOS file information and configuration tips.">
+    <meta property="og:image" content="YOUR_YS2_PREVIEW_IMAGE.jpg"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="YOUR_YS2_PAGE_URL"> <meta property="twitter:title" content="Yaba Sanshiro 2 - Sega Saturn Emulator Setup Guide | ROM Central">
+    <meta property="twitter:description" content="Guide to setting up Yaba Sanshiro 2 on PC and Android to play Sega Saturn games. Includes BIOS file information and configuration tips.">
+    <meta property="twitter:image" content="YOUR_YS2_PREVIEW_IMAGE.jpg"> <link rel="canonical" href="YOUR_YS2_PAGE_URL"> <link rel="icon" href="/favicon.ico" type="image/x-icon"> <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Install and Set Up Yaba Sanshiro 2 (Sega Saturn Emulator)",
+      "description": "Guide to installing Yaba Sanshiro 2 on PC and Android, including the essential step of adding a Sega Saturn BIOS file.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Download Yaba Sanshiro 2",
+          "text": "Get the latest version for your platform (PC: Windows, macOS, Linux; Android) from the official website (uoyabause.org) or app store.",
+          "url": "YOUR_YS2_PAGE_URL#download"
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Obtain Sega Saturn BIOS",
+          "text": "Yaba Sanshiro 2 REQUIRES a Sega Saturn BIOS file (e.g., 'saturn.bios', 'mpr-17933.bin', 'sega_101.bin'). You must legally obtain this file from your own Saturn console."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Install Emulator & Place BIOS",
+          "itemListElement": [
+            {"@type": "HowToStep", "name": "PC:", "text": "Extract the downloaded archive. Place the Saturn BIOS file inside the Yaba Sanshiro 2 folder (or as specified in its settings/documentation)."},
+            {"@type": "HowToStep", "name": "Android:", "text": "Install the app (from Play Store or APK). Place the Saturn BIOS file in the location specified by the app (often Internal Storage > 'yabasanshiro' > 'bios'). Grant storage permissions."}
+          ]
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Run & Configure Emulator",
+          "text": "Launch Yaba Sanshiro 2. Go into Settings. Configure Video options (resolution, rendering), Audio, and Input (map controller/keyboard/touch controls)."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Set Game Directory",
+          "text": "In Settings, specify the folder containing your Sega Saturn game files (ISO, CUE/BIN, CHD, etc.)."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Load Game",
+          "text": "Select a game from the emulator's game list or use the 'Load Game' / 'Start Game' option."
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="styles.css"> <script defer src="script.js"></script> <style>
+        /* Using refined styles, Saturn grey theme */
+        html, body { height: 100%; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        header { /* Add header styles if needed from styles.css */ }
+        nav { /* Add nav styles if needed from styles.css */ }
+        nav ul { list-style: none; padding: 0; margin: 0; text-align: center; /* Example */ /* Add more nav styles */ }
+        nav li { display: inline-block; /* Example */ margin: 0 15px; /* Example */ /* Add more nav styles */ }
+        nav a { text-decoration: none; color: #007bff; /* Example */ /* Add nav link styles */ }
+        nav a:hover, nav a[aria-current="page"] { text-decoration: underline; font-weight: bold; /* Example */ }
+
+        main { padding: 20px; max-width: 1200px; margin: 0 auto; padding-bottom: 80px; /* Ensure footer doesn't overlap content */ }
+        h1 { color: #808080; /* Saturn Grey */ text-align: center; margin-bottom: 30px; font-size: 2.2em; }
+        h2 { color: #333; border-bottom: 2px solid #808080; /* Saturn Grey */ padding-bottom: 5px; margin-top: 40px; }
+        section { margin-bottom: 50px; background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .important-note { background-color: #fff3cd; border-left: 5px solid #ffeeba; padding: 10px; margin-bottom: 20px; } /* Style for BIOS note */
+         .video-container { position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0; overflow: hidden; max-width: 100%; background: #000; margin: 20px auto; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .download-button { display: inline-block; background-color: #808080; /* Saturn Grey */ color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; transition: background-color 0.3s; border: none; cursor: pointer; }
+        .download-button:hover { background-color: #666666; /* Darker Grey */ }
+        ol { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        #faq h3 { margin-top: 25px; color: #444; }
+
+        footer { background-color: #333; color: white; text-align: center; padding: 15px 10px; position: relative; bottom: 0; width: 100%; margin-top: 40px; box-sizing: border-box; }
+        .footer-links { margin-bottom: 10px; }
+        .footer-links a { color: #fff; margin: 0 10px; text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; }
+
+        .ad-banner-left, .ad-banner-right { position: fixed; background-color: #333; color: white; padding: 10px; font-size: 1.2em; border-radius: 8px; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .ad-banner-left { bottom: 20px; left: 20px; writing-mode: vertical-rl; transform: rotate(180deg); }
+        #adBannerLeft button { position: absolute; top: -5px; right: -25px; background: #555; color: white; border: none; border-radius: 50%; cursor: pointer; font-size: 0.8em; width: 20px; height: 20px; line-height: 20px; text-align: center; transform: rotate(180deg); writing-mode: horizontal-tb; }
+        .ad-banner-right { bottom: 20px; right: 20px; }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-container" aria-label="ROM Central Home">
+            <img src="logo.png" alt="ROM Central Logo" class="logo"> </a>
+        <button id="theme-toggle" aria-label="Toggle theme"></button>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="roms.html">ROMs</a></li>
+            <li><a href="emulators.html" aria-current="page">Emulators</a></li> <li><a href="bios.html">Mobile Games</a></li>
+            <li><a href="rom-packs.html">ROM Packs</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Yaba Sanshiro 2 - Sega Saturn Emulator Setup Guide</h1>
+
+        <div class="important-note">
+            <strong>Important:</strong> Yaba Sanshiro 2 requires a <strong>Sega Saturn BIOS file</strong> to run games. You must legally obtain this file from your own console hardware. Common filenames include <code>saturn.bios</code>, <code>mpr-17933.bin</code>, or <code>sega_101.bin</code>. Place this file where the emulator expects it (see setup steps below).
+        </div>
+
+        <section id="pc-installation">
+            <h2>PC Setup Guide (Windows, macOS, Linux)</h2>
+             <p>Yaba Sanshiro 2 is a fork of the Yabause Saturn emulator, available for multiple desktop platforms. Saturn emulation can be demanding.</p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="ACTUAL_YOUTUBE_EMBED_URL_YS2_PC" title="Yaba Sanshiro 2 PC Installation & Setup Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <ol>
+                <li><strong>Download Yaba Sanshiro 2</strong> - Get the latest version for your OS from the official website (uoyabause.org) or its GitHub repository.</li>
+                <li><strong>Extract Files</strong> - The PC version usually comes as an archive (`.zip`, `.tar.gz`). Extract the contents into a dedicated folder.</li>
+                <li><strong>Obtain & Place BIOS</strong> - Acquire your Saturn BIOS file legally. Place the BIOS file (e.g., `saturn.bios`) directly into the main Yaba Sanshiro 2 folder, or check the emulator's settings/documentation for the specific required location.</li>
+                <li><strong>Run Yaba Sanshiro 2</strong> - Launch the main executable file (e.g., `yabasanshiro.exe` on Windows).</li>
+                <li><strong>Configure Settings</strong> - Go to `Settings`. Adjust options under:
+                    <ul>
+                        <li>`Video`: Select rendering options, resolution scaling, aspect ratio.</li>
+                        <li>`Input`: Map your gamepad or keyboard to the Saturn controller inputs.</li>
+                        <li>`Core`: Ensure the BIOS file path is correct if needed.</li>
+                    </ul>
+                </li>
+                <li><strong>Set Game Directory</strong> - Go to `File` -> `Settings` -> `Paths` (or similar menu) and add the folder(s) where your Saturn game files (ISO, CUE/BIN, CHD formats) are stored.</li>
+                <li><strong>Load Game</strong> - Use `File` -> `Open...` to browse for a game file, or select a game from the list if the game directory scan is supported and enabled.</li>
+            </ol>
+            <p><strong>System Requirements (PC):</strong> Sega Saturn emulation is complex. A mid-range modern CPU (multi-core recommended) and a decent graphics card supporting OpenGL are needed for good performance in many games.</p>
+            <a href="https://www.yabasanshiro.com/download" class="download-button" id="ys2-pc-download">Download Yaba Sanshiro 2 for PC</a> </section>
+
+        <section id="android-installation">
+            <h2>Android Setup Guide</h2>
+             <p>Yaba Sanshiro 2 is very popular on Android and available in both a free (ad-supported) and paid 'Pro' version (removes ads, may add features).</p>
+            <div class="video-container">
+                 <iframe width="560" height="315" src="ACTUAL_YOUTUBE_EMBED_URL_YS2_ANDROID" title="Yaba Sanshiro 2 Android Installation & Setup Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <ol>
+                <li><strong>Download Yaba Sanshiro 2</strong> - Install 'Yaba Sanshiro 2' (Free or Pro) from the Google Play Store or download the APK from the official website (uoyabause.org).</li>
+                <li><strong>Install the App</strong> - Install via Play Store or open the APK. If using an APK, enable "Install unknown apps" in Android Settings -> Security.</li>
+                 <li><strong>Obtain & Place BIOS</strong> - Acquire your Saturn BIOS file legally. Launch Yaba Sanshiro 2 once. It usually creates a folder in your internal storage (e.g., `Internal Storage/yabasanshiro/bios`). Place the BIOS file inside this `bios` folder.</li>
+                 <li><strong>Grant Permissions</strong> - Relaunch the app. Grant storage permissions when prompted to access games and the BIOS file.</li>
+                <li><strong>Configure Settings</strong> - Tap the settings icon. Key areas:
+                     <ul>
+                        <li>Ensure the `BIOS File Location` is correctly pointing to your BIOS file.</li>
+                        <li>Adjust `Video` settings (resolution, rendering mode).</li>
+                        <li>Configure `Input` (touch overlay layout/opacity or map a physical gamepad).</li>
+                        <li>Add your `Game Directory` path.</li>
+                    </ul>
+                </li>
+                <li><strong>Load Game</strong> - Return to the main screen. Your games should appear if the directory was set correctly. Tap a game to start. You may need to confirm the BIOS file selection on first launch.</li>
+            </ol>
+            <p><strong>System Requirements (Android):</strong> Demanding. A mid-to-high-end modern Android device with a powerful processor (Snapdragon 7xx/8xx series or equivalent recommended) is needed for playable speed in many Saturn games.</p>
+             <a href="https://www.yabasanshiro.com/download" class="download-button" id="ys2-android-download">Download Yaba Sanshiro 2 (Android)</a> </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <h3>Do I absolutely need a Saturn BIOS file?</h3>
+            <p>Yes. Unlike some emulators, Yaba Sanshiro 2 (and most other Saturn emulators) requires an official Sega Saturn BIOS file to boot games. You must provide this file yourself, dumped legally from your own console.</p>
+
+            <h3>Yaba Sanshiro vs. Yaba Sanshiro 2 vs. Yabause?</h3>
+            <p>Yabause is an older open-source Saturn emulator. Yaba Sanshiro was a fork focusing initially on mobile performance. Yaba Sanshiro 2 is the current version, continuing development with further improvements for both Android and PC.</p>
+
+            <h3>What's the difference between Free and Pro on Android?</h3>
+            <p>The Free version of Yaba Sanshiro 2 on Android typically includes advertisements. The Pro version removes ads and may offer additional features like higher resolution rendering or more save state slots.</p>
+
+            <h3>How is Sega Saturn emulation performance?</h3>
+            <p>The Sega Saturn is notoriously difficult to emulate accurately due to its complex dual-CPU architecture and multiple graphics processors. While Yaba Sanshiro 2 has made great strides, performance can still vary significantly between games and depends heavily on your hardware (both PC and Android).</p>
+             <h3>Are there other Saturn emulators?</h3>
+             <p>Yes, other notable Saturn emulators include Mednafen (often via the Beetle Saturn core in RetroArch), Kronos (another Yabause fork), and SSF (Windows-only, closed-source, known for accuracy but complex setup).</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+        </div>
+        <p>&copy; 2025 ROM Central.</p>
+    </footer>
+
+    <div id="adBannerLeft">
+        <button id="dismissAdButton" aria-label="Dismiss ad">X</button>
+        <div class="ad-banner-left">Vertical Ad Space</div>
+    </div>
+    <div class="ad-banner-right" aria-label="Advertisement">Ad Space</div>
+
+    <script>
+        // Ad dismissal script
+        const dismissButton = document.getElementById('dismissAdButton');
+        if (dismissButton) {
+            dismissButton.addEventListener('click', function() {
+                const adBannerLeft = document.getElementById('adBannerLeft');
+                if (adBannerLeft) {
+                    adBannerLeft.classList.add('hidden');
+                }
+            });
+        }
+
+        // Placeholder for theme toggle or other JS from script.js
+        const themeToggleButton = document.getElementById('theme-toggle');
+        if (themeToggleButton) {
+             themeToggleButton.textContent = ''; // Example
+             // Add theme toggle logic here
+        }
+    </script>
+</body>
+</html>

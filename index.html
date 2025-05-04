@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROM Central</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        /* Your existing styles remain unchanged */
+        .search-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .search-input {
+            padding: 10px;
+            width: 50%;
+            font-size: 16px;
+        }
+        .search-results {
+            margin-top: 20px;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .search-results .game-card {
+            margin: 5px;
+            text-align: center;
+            width: 100px;
+        }
+        .search-results .game-card img {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+        }
+        .search-results .game-card h3 {
+            font-size: 12px;
+        }
+			        .footer-links {
+            margin-bottom: 15px;
+        }
+        .footer-links a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+		
+    </style>
+</head>
+<body>
+    <!-- Your existing HTML structure remains the same -->
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="ROM Central Logo" class="logo">
+        </a>
+        <button id="theme-toggle"></button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="roms.html">ROMs</a></li>
+            <li><a href="emulators.html">Emulators</a></li>
+            <li><a href="bios.html">Mobile Games</a></li>
+            <li><a href="rom-packs.html">ROM Packs</a></li>
+			 <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="search-container">
+        <input type="text" id="search-input" class="search-input" placeholder="Search for games...">
+        <div id="search-results" class="search-results"></div>
+    </div>
+
+    <main class="content-container">
+        <section class="recently-added">
+            <h2>Recently Added Games</h2>
+            <div id="recent-games" class="game-grid"></div>
+        </section>
+
+        <section class="most-viewed">
+            <h2>Most Viewed Games</h2>
+            <div id="most-viewed-games" class="game-grid"></div>
+        </section>
+    </main>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+        </div>
+        <p>&copy; 2025 ROM Central.</p>
+    </footer>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            // Use either of these options (choose one):
+
+            // OPTION 1: Using the /all-games endpoint
+            fetchGames("http://localhost:3000/all-games", "recent-games", "id", 8);
+            fetchGames("http://localhost:3000/all-games", "most-viewed-games", "views", 4);
+
+            // OR OPTION 2: Using the ?all=true parameter
+            // fetchGames("http://localhost:3000/games?all=true", "recent-games", "id", 8);
+            // fetchGames("http://localhost:3000/games?all=true", "most-viewed-games", "views", 4);
+            
+            setupSearch();
+        });
+
+        async function fetchGames(url, containerId, sortBy, limit) {
+            try {
+                const response = await fetch(url);
+                if (!response.ok) {
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const data = await response.json();
+                
+                // Handle both response formats
+                const games = data.games || data;
+                
+                if (!Array.isArray(games)) {
+                    throw new Error("Invalid games data format");
+                }
+
+                // Sorting
+                if (sortBy === "views") {
+                    games.sort((a, b) => (b.views || 0) - (a.views || 0));
+                } else {
+                    games.sort((a, b) => b.id - a.id); // Higher IDs first
+                }
+
+                displayGames(games.slice(0, limit), containerId);
+                
+                console.log(`Successfully loaded ${games.length} games`);
+            } catch (error) {
+                console.error("Error in fetchGames:", error);
+                document.getElementById(containerId).innerHTML = 
+                    `<p>Error loading games: ${error.message}</p>`;
+            }
+        }
+
+        function displayGames(games, containerId) {
+            const gamesContainer = document.getElementById(containerId);
+            gamesContainer.innerHTML = games.length === 0 ? "<p>No games available.</p>" : "";
+
+            games.forEach(game => {
+                const gameCard = document.createElement("div");
+                gameCard.classList.add("game-card");
+                gameCard.innerHTML = `
+                    <a href="game.html?id=${game.id}" class="game-link">
+                        <img src="${game.cover || 'placeholder.jpg'}" alt="${game.title}" 
+                             onerror="this.src='placeholder.jpg'">
+                        <h3>${game.title}</h3>
+                    </a>
+                `;
+                gamesContainer.appendChild(gameCard);
+            });
+        }
+
+        async function setupSearch() {
+            const searchInput = document.getElementById("search-input");
+            const searchResults = document.getElementById("search-results");
+
+            searchInput.addEventListener("input", async () => {
+                const query = searchInput.value.toLowerCase().trim();
+                if (query.length === 0) {
+                    searchResults.innerHTML = "";
+                    return;
+                }
+
+                try {
+                    const response = await fetch("http://localhost:3000/all-games");
+                    if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                    const allGames = await response.json();
+                    
+                    const games = allGames.games || allGames;
+                    if (!Array.isArray(games)) {
+                        throw new Error("Invalid games data format");
+                    }
+
+                    const filteredGames = games.filter(game => 
+                        game.title.toLowerCase().includes(query)
+                    );
+
+                    searchResults.innerHTML = filteredGames.length === 0 
+                        ? "<p>No games found.</p>" 
+                        : "";
+
+                    filteredGames.forEach(game => {
+                        const gameCard = document.createElement("div");
+                        gameCard.classList.add("game-card");
+                        gameCard.innerHTML = `
+                            <a href="game.html?id=${game.id}">
+                                <img src="${game.cover || 'placeholder.jpg'}" alt="${game.title}"
+                                     onerror="this.src='placeholder.jpg'">
+                                <h3>${game.title}</h3>
+                            </a>
+                        `;
+                        searchResults.appendChild(gameCard);
+                    });
+                } catch (error) {
+                    console.error("Search error:", error);
+                    searchResults.innerHTML = `<p>Error: ${error.message}</p>`;
+                }
+            });
+        }
+    </script>
+</body>
+</html>

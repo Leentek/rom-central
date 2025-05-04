@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - ROM Central</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script> <style>
+        /* Basic styles for blog layout */
+        .blog-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 15px;
+        }
+        .latest-posts-section, .older-posts-section {
+            margin-bottom: 30px;
+        }
+        .post-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+        }
+
+        /* Post Item Styling (Includes Base, Transition, Hover, Click) */
+        .post-item {
+            border: 1px solid #ddd; /* Default border */
+            border-radius: 5px;
+            padding: 15px;
+            background-color: #fff; /* Default background (Adjust for theme) */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            margin-bottom: 20px; /* Ensure spacing */
+            /* --- Transition for hover and click effects --- */
+            transition: transform 0.2s ease-in-out,
+                        box-shadow 0.2s ease-in-out,
+                        background-color 0.1s ease-in-out,
+                        border-color 0.1s ease-in-out;
+        }
+
+        /* --- Hover Animation --- */
+        .post-item:hover {
+            transform: translateY(-4px); /* Lifts the item slightly */
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15); /* Increases shadow */
+            cursor: pointer;
+        }
+
+        /* --- Clicked State --- */
+        .post-item.post-item-clicked {
+            background-color: #e0f7ff; /* Example: Light blue background */
+            border-color: #007bff;     /* Example: Blue border */
+            transform: translateY(0); /* Optional: Reset lift effect immediately on click */
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1); /* Optional: Reset shadow */
+        }
+
+        /* Post Item Content Styles */
+        .post-item img.thumbnail {
+            max-width: 100%;
+            height: auto; /* Maintain aspect ratio */
+            /* Consider setting a max-height if needed */
+            margin-bottom: 10px;
+            border-radius: 3px;
+        }
+        .post-item h3 {
+            margin-top: 0;
+            font-size: 1.2em;
+            color: #333; /* Ensure heading color is set (adjust for theme) */
+        }
+        .post-item .meta {
+            font-size: 0.9em;
+            color: #666;
+            margin-bottom: 10px;
+        }
+        .post-item p.snippet {
+            font-size: 1em;
+            line-height: 1.5;
+            margin-bottom: 15px;
+            color: #444; /* Adjust for theme */
+        }
+
+        /* Styling for the link wrapper */
+        .post-link-wrapper {
+            display: block; /* Makes the link fill the container */
+            text-decoration: none; /* Removes the default underline */
+            color: inherit; /* Makes the link text inherit color from parent */
+            height: 100%; /* Ensure it fills the parent article element */
+        }
+
+        /* Optional: Style the indicator span */
+        .read-more-indicator {
+            display: inline-block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #3498db; /* Or your theme's link color */
+        }
+
+        /* Ad Placeholders */
+        .ad-banner, .ad-banner-sidebar {
+            background-color: #f0f0f0;
+            border: 1px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            margin: 20px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1em;
+            color: #888;
+        }
+         .ad-banner { min-height: 90px; }
+         .ad-banner-sidebar { min-height: 250px; margin-bottom: 20px; }
+
+        /* Optional Sidebar Layout */
+        .main-content-area {
+            display: flex;
+            gap: 20px;
+        }
+        .posts-column { flex: 3; }
+        .sidebar-column { flex: 1; }
+
+        @media (max-width: 768px) {
+            .main-content-area { flex-direction: column; }
+        }
+			    .footer-links {
+            margin-bottom: 15px;
+        }
+        .footer-links a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="ROM Central Logo" class="logo">
+        </a>
+        <button id="theme-toggle"></button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="roms.html">ROMs</a></li>
+            <li><a href="emulators.html">Emulators</a></li>
+            <li><a href="bios.html">Mobile Games</a></li>
+            <li><a href="rom-packs.html">ROM Packs</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="blog-container main-content-area">
+        <div class="posts-column">
+            <h1>Latest News & Updates</h1>
+
+            <div class="ad-banner">(Ad Banner - e.g., 728x90)</div>
+
+            <section class="latest-posts-section">
+                <h2>Most Recent Posts</h2>
+                <div id="latest-posts" class="post-list">
+                    <p>Loading posts...</p>
+                </div>
+            </section>
+
+            <div class="ad-banner">(Ad Banner - e.g., Leaderboard or Responsive)</div>
+
+            <section class="older-posts-section">
+                <h2>Older Posts</h2>
+                <div id="older-posts" class="post-list">
+                    <p>Loading older posts...</p>
+                </div>
+            </section>
+        </div>
+
+        <aside class="sidebar-column">
+            <h2>Ads</h2>
+            <div class="ad-banner-sidebar">(Ad Banner - e.g., 300x250 or 160x600)</div>
+            <div class="ad-banner-sidebar">(Another Sidebar Ad)</div>
+            </aside>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+        </div>
+        <p>&copy; 2025 ROM Central.</p>
+    </footer>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:3000'; // Adjust if needed
+
+        document.addEventListener("DOMContentLoaded", () => {
+            fetchBlogPosts();
+        });
+
+async function fetchBlogPosts() {
+    try {
+        // Fetch posts, assuming the API might not sort them as expected
+        const response = await fetch(`${API_BASE_URL}/blog-posts?limit=10`); // Fetch latest 10 posts (or more if needed for pagination)
+        if (!response.ok) {
+            throw new Error(`HTTP error! status: ${response.status}`);
+        }
+        const data = await response.json();
+        let posts = data.posts || []; // Adjust based on your API response structure
+
+        if (!Array.isArray(posts)) {
+            throw new Error("Invalid posts data format");
+        }
+
+        // --- FIX: Sort posts by date (newest first) ---
+        // Ensure posts have a valid date for sorting; handle potential errors
+        posts.sort((a, b) => {
+            const dateA = a.createdAt ? new Date(a.createdAt) : new Date(0); // Use epoch if date missing
+            const dateB = b.createdAt ? new Date(b.createdAt) : new Date(0);
+            return dateB - dateA; // Sort descending (newest first)
+        });
+        // --- END FIX ---
+
+        // Now slicing will correctly separate newest from older
+        const latestPosts = posts.slice(0, 3);
+        const olderPosts = posts.slice(3);
+
+        displayPosts(latestPosts, 'latest-posts');
+        displayPosts(olderPosts, 'older-posts'); // Consider adding pagination here for many older posts
+
+    } catch (error) {
+        console.error("Error fetching blog posts:", error);
+        document.getElementById('latest-posts').innerHTML = `<p>Error loading posts: ${error.message}</p>`;
+        document.getElementById('older-posts').innerHTML = ''; // Clear older posts on error too
+    }
+}
+
+        // --- THIS IS THE CORRECTED displayPosts FUNCTION ---
+        function displayPosts(posts, containerId) {
+            const container = document.getElementById(containerId);
+            if (!container) return;
+
+            container.innerHTML = posts.length === 0 ? "<p>No posts found.</p>" : ""; // Clear loading/default text
+
+            posts.forEach(post => {
+                const postElement = document.createElement('article');
+                postElement.classList.add('post-item'); // Add class to the article element
+
+                const snippet = post.content ? (post.content.substring(0, 150) + (post.content.length > 150 ? '...' : '')) : 'No content preview available.';
+                const postDate = post.createdAt ? new Date(post.createdAt).toLocaleDateString() : 'Unknown date';
+                const author = post.author || 'Unknown author';
+
+                let imageHtml = '';
+                if (post.image) {
+                    imageHtml = `<img src="${post.image}" alt="${post.title || 'Post image'}" class="thumbnail" onerror="this.style.display='none'">`;
+                }
+
+                // Create the link wrapper element first
+                const linkWrapper = document.createElement('a');
+                linkWrapper.href = `article.html?id=${post.id}`;
+                linkWrapper.classList.add('post-link-wrapper');
+                linkWrapper.innerHTML = `
+                    ${imageHtml}
+                    <h3>${post.title || 'Untitled Post'}</h3>
+                    <div class="meta">By ${author} on ${postDate}</div>
+                    <p class="snippet">${snippet}</p>
+                    <span class="read-more-indicator">Read More »</span>
+                `;
+
+                // Add click listener to the link wrapper
+                linkWrapper.addEventListener('click', function(event) {
+                    event.preventDefault(); // Prevent immediate navigation
+
+                    // Remove 'clicked' class from any other items first
+                    document.querySelectorAll('.post-item.post-item-clicked').forEach(item => {
+                        item.classList.remove('post-item-clicked');
+                    });
+
+                    // Add 'clicked' class to the parent article element (postElement)
+                    // Use closest() for robustness in finding the parent .post-item
+                    const parentPostItem = event.target.closest('.post-item');
+                    if (parentPostItem) {
+                         parentPostItem.classList.add('post-item-clicked');
+                    } else {
+                         // Fallback just in case .closest fails (unlikely here)
+                         postElement.classList.add('post-item-clicked');
+                    }
+
+                    // Get the URL to navigate to
+                    const targetUrl = this.href;
+
+                    // Delay navigation slightly to allow style change to be seen
+                    setTimeout(() => {
+                        window.location.href = targetUrl;
+                    }, 150); // Delay in milliseconds (adjust 100-200ms)
+                });
+
+                // Append the link wrapper to the article element
+                postElement.appendChild(linkWrapper);
+                // Append the article element to the container
+                container.appendChild(postElement);
+            });
+        }
+        // --- END OF CORRECTED displayPosts FUNCTION ---
+
+    </script>
+</body>
+</html>

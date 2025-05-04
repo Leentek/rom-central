@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Project64 N64 Emulator - Download & Setup Guide | ROM Central</title>
+    <meta name="description" content="Download and set up the Project64 emulator for PC (Windows) to play Nintendo 64 games. Includes configuration tips for plugins (GlideN64) and info on Android N64 emulator alternatives.">
+    <meta name="keywords" content="Project64 download, N64 emulator, Nintendo 64 emulator, Project64 setup, play N64 games PC, GlideN64 plugin, N64 emulator Android, Mupen64Plus FZ">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="YOUR_P64_PAGE_URL"> <meta property="og:title" content="Project64 N64 Emulator - Download & Setup Guide | ROM Central">
+    <meta property="og:description" content="Download Project64 for Windows PC to play N64 games. Setup guide covers plugins (GlideN64) & controls. Also includes info on Android N64 alternatives.">
+    <meta property="og:image" content="YOUR_P64_PREVIEW_IMAGE.jpg"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="YOUR_P64_PAGE_URL"> <meta property="twitter:title" content="Project64 N64 Emulator - Download & Setup Guide | ROM Central">
+    <meta property="twitter:description" content="Download Project64 for Windows PC to play N64 games. Setup guide covers plugins (GlideN64) & controls. Also includes info on Android N64 alternatives.">
+    <meta property="twitter:image" content="YOUR_P64_PREVIEW_IMAGE.jpg"> <link rel="canonical" href="YOUR_P64_PAGE_URL"> <link rel="icon" href="/favicon.ico" type="image/x-icon"> <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Install Nintendo 64 Emulators (Project64 for PC, Alternatives for Android)",
+      "description": "Step-by-step guide to installing Project64 on Windows PC and alternative N64 emulators like Mupen64Plus FZ on Android.",
+      "step": [
+        {
+          "@type": "HowToSection",
+          "name": "PC Installation (Project64)",
+          "itemListElement": [
+            {"@type": "HowToStep", "name": "Download Project64", "text": "Get the latest stable installer from the official Project64 website.", "url": "YOUR_P64_PAGE_URL#pc-installation"},
+            {"@type": "HowToStep", "name": "Run Installer", "text": "Run the downloaded setup executable and follow the installation prompts."},
+            {"@type": "HowToStep", "name": "First Time Setup", "text": "Launch Project64. A setup wizard may appear to select language and configure default video/audio/input plugins (GlideN64 is recommended for video)."},
+            {"@type": "HowToStep", "name": "Configure Plugins", "text": "Go to Options -> Settings (or Configuration). Review Video (graphics) and Input (controller) plugin settings. Map your gamepad or keyboard under the Input plugin settings."},
+            {"@type": "HowToStep", "name": "Set ROM Directory", "text": "Go to File -> Choose ROM Directory... and select the folder where you store your N64 ROM files."},
+            {"@type": "HowToStep", "name": "Load ROM", "text": "Select a game from the list populated after setting the directory, or go to File -> Open ROM... and browse for your N64 ROM file (.n64, .z64, .v64)."}
+          ]
+        },
+        {
+          "@type": "HowToSection",
+          "name": "Android Installation (N64 Emulators like Mupen64Plus FZ)",
+          "itemListElement": [
+            {"@type": "HowToStep", "name": "Choose & Download Emulator", "text": "Search for 'Mupen64Plus FZ' or other N64 emulators on the Google Play Store, or download a trusted APK. RetroArch with an N64 core is also an option.", "url": "YOUR_P64_PAGE_URL#android-installation"},
+            {"@type": "HowToStep", "name": "Install the App", "text": "Install from the Play Store or open the downloaded APK (enable 'Install unknown apps' in Android settings if needed). Grant storage permissions."},
+            {"@type": "HowToStep", "name": "Configure Emulator", "text": "Open the app. Configure settings like video profiles/plugins (e.g., GlideN64), rendering resolution, and map touch controls or a physical gamepad."},
+            {"@type": "HowToStep", "name": "Load ROMs", "text": "Use the emulator's interface to add your ROM folder and select an N64 game file to play."}
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="styles.css"> <script defer src="script.js"></script> <style>
+        /* Using refined styles, adjusting theme color */
+        html, body { height: 100%; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        header { /* Add header styles if needed from styles.css */ }
+        nav { /* Add nav styles if needed from styles.css */ }
+        nav ul { list-style: none; padding: 0; margin: 0; text-align: center; /* Example */ /* Add more nav styles */ }
+        nav li { display: inline-block; /* Example */ margin: 0 15px; /* Example */ /* Add more nav styles */ }
+        nav a { text-decoration: none; color: #007bff; /* Example */ /* Add nav link styles */ }
+        nav a:hover, nav a[aria-current="page"] { text-decoration: underline; font-weight: bold; /* Example */ }
+
+        main { padding: 20px; max-width: 1200px; margin: 0 auto; padding-bottom: 80px; /* Ensure footer doesn't overlap content */ }
+        h1 { color: #0065c7; /* N64 Blue */ text-align: center; margin-bottom: 30px; font-size: 2.2em; }
+        h2 { color: #333; border-bottom: 2px solid #0065c7; /* N64 Blue */ padding-bottom: 5px; margin-top: 40px; }
+        section { margin-bottom: 50px; background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+         .video-container { position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0; overflow: hidden; max-width: 100%; background: #000; margin: 20px auto; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .download-button { display: inline-block; background-color: #0065c7; /* N64 Blue */ color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; transition: background-color 0.3s; border: none; cursor: pointer; }
+        .download-button:hover { background-color: #004c97; /* Darker N64 Blue */ }
+        ol { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        #faq h3 { margin-top: 25px; color: #444; }
+
+        footer { background-color: #333; color: white; text-align: center; padding: 15px 10px; position: relative; bottom: 0; width: 100%; margin-top: 40px; box-sizing: border-box; }
+        .footer-links { margin-bottom: 10px; }
+        .footer-links a { color: #fff; margin: 0 10px; text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; }
+
+        .ad-banner-left, .ad-banner-right { position: fixed; background-color: #333; color: white; padding: 10px; font-size: 1.2em; border-radius: 8px; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .ad-banner-left { bottom: 20px; left: 20px; writing-mode: vertical-rl; transform: rotate(180deg); }
+        #adBannerLeft button { position: absolute; top: -5px; right: -25px; background: #555; color: white; border: none; border-radius: 50%; cursor: pointer; font-size: 0.8em; width: 20px; height: 20px; line-height: 20px; text-align: center; transform: rotate(180deg); writing-mode: horizontal-tb; }
+        .ad-banner-right { bottom: 20px; right: 20px; }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-container" aria-label="ROM Central Home">
+            <img src="logo.png" alt="ROM Central Logo" class="logo"> </a>
+        <button id="theme-toggle" aria-label="Toggle theme"></button>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="roms.html">ROMs</a></li>
+            <li><a href="emulators.html" aria-current="page">Emulators</a></li> <li><a href="bios.html">Mobile Games</a></li>
+            <li><a href="rom-packs.html">ROM Packs</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>Project64 - Nintendo 64 Emulator Setup Guide</h1>
+
+        <section id="pc-installation">
+            <h2>PC Setup Guide (Project64 for Windows)</h2>
+            <div class="video-container">
+                <iframe width="560" height="315" src="ACTUAL_YOUTUBE_EMBED_URL_P64_PC" title="Project64 PC Installation & Setup Tutorial" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p>Follow these steps to install and configure Project64 on your Windows PC:</p>
+            <ol>
+                <li><strong>Download Project64</strong> - Get the latest stable installer from the official Project64 website (project64-emu.com) using the button below.</li>
+                <li><strong>Run the Installer</strong> - Execute the downloaded setup file (`.exe`) and follow the on-screen instructions to install Project64.</li>
+                <li><strong>First Launch & Setup</strong> - When you first run Project64, you might be prompted to select your preferred language.</li>
+                <li><strong>Configure Plugins</strong> - Go to `Options` -> `Settings...` (or `Configuration`). The most important plugins are:
+                    <ul>
+                        <li><strong>Video (graphics) Plugin:</strong> Usually defaults to `GlideN64`. This is highly recommended for compatibility and features. You can tweak its settings for resolution, aspect ratio, and enhancements.</li>
+                        <li><strong>Input (controller) Plugin:</strong> Configure your gamepad or keyboard controls here. Map the N64 controller buttons, analog stick, and C-buttons to your input device.</li>
+                        <li>Audio and RSP plugins usually work well with defaults.</li>
+                    </ul>
+                </li>
+                <li><strong>Set ROM Directory</strong> - Go to `File` -> `Choose ROM Directory...`. Browse to and select the folder where you keep your N64 ROM files (`.n64`, `.z64`, `.v64`, or `.zip`). Project64 will scan this folder and display your games in a list.</li>
+                <li><strong>Load and Play Game</strong> - Double-click a game from the list in the main window, or go to `File` -> `Open ROM...` to manually browse for a ROM file.</li>
+            </ol>
+            <p><strong>System Requirements (PC):</strong> Nintendo 64 emulation is more demanding than older systems. A reasonably modern CPU (dual-core or better), 4GB+ RAM, and a dedicated graphics card (DirectX 11 / OpenGL 3.3 compatible) are recommended for good performance, especially with GlideN64 enhancements.</p>
+            <a href="https://www.pj64-emu.com/download/project64-3-0-1-installer" class="download-button" id="p64-pc-download">Download Project64 for PC</a> </section>
+
+        <section id="android-installation">
+            <h2>Android N64 Emulator Setup Guide</h2>
+            <div class="video-container">
+                 <iframe width="560" height="315" src="ACTUAL_YOUTUBE_EMBED_URL_N64_ANDROID" title="Android N64 Emulator Setup Tutorial (e.g., Mupen64Plus FZ)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <p><strong>Project64 is not available for Android.</strong> However, excellent N64 emulation is possible using other apps. The most popular standalone option is <strong>Mupen64Plus FZ</strong>. You can also use RetroArch with an N64 core like <strong>Mupen64Plus-Next</strong>. Here's a general guide for Mupen64Plus FZ:</p>
+            <ol>
+                <li><strong>Download Emulator</strong> - Search for "Mupen64Plus FZ" on the Google Play Store or download its APK from a trusted source.</li>
+                <li><strong>Install the App</strong> - Install from the Play Store or open the APK (you might need to enable "Install unknown apps" in Android settings first). Grant storage permissions when requested.</li>
+                <li><strong>Configure Settings</strong> - Launch Mupen64Plus FZ. Navigate the menus (`Settings`). Key areas:
+                    <ul>
+                        <li><strong>Video Profiles:</strong> Select an emulation profile (like GlideN64) and adjust settings like rendering resolution.</li>
+                        <li><strong>Input:</strong> Map touch screen controls or configure a connected Bluetooth/USB gamepad.</li>
+                        <li><strong>Library:</strong> Add the directory on your device where your N64 ROMs are stored.</li>
+                    </ul>
+                </li>
+                <li><strong>Load Your Games</strong> - After setting the library path, use the app's main screen to refresh and browse your N64 ROM collection. Tap a game to start playing.</li>
+            </ol>
+            <p><strong>Highly Recommended:</strong> N64 games are complex to play with touch controls. A physical gamepad connected via Bluetooth or USB-OTG is strongly advised for the best experience on Android.</p>
+             <a href="https://apkpure.com/project64-n64-emulator/emu.project64" class="download-button" id="n64-android-download">Find N64 Emulators for Android</a> </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <h3>What are Plugins in Project64?</h3>
+            <p>Plugins are components that handle specific tasks like graphics (Video), sound (Audio), controller input (Input), and RSP processing. Choosing the right plugins, especially the video plugin (like GlideN64), is crucial for compatibility and performance.</p>
+
+            <h3>Is Project64 safe to download? Are there ads?</h3>
+            <p>Downloading from the official Project64 website is generally safe. Some older versions included bundled software during installation, but recent official builds are typically cleaner. Always download from the official source to avoid potentially modified versions.</p>
+
+             <h3>Why are N64 emulators more demanding than SNES or GBA emulators?</h3>
+            <p>The Nintendo 64 was a significantly more complex 3D console. Emulating its unique architecture accurately requires much more processing power from your PC or phone compared to emulating older 2D systems.</p>
+
+            <h3>What are the best N64 emulators for Android?</h3>
+            <p>Mupen64Plus FZ is widely considered the best standalone N64 emulator for Android due to its compatibility, features, and active development. RetroArch using the Mupen64Plus-Next core is another excellent option, especially if you already use RetroArch for other systems.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+        </div>
+        <p>&copy; 2025 ROM Central.</p>
+    </footer>
+
+    <div class="ad-banner-right" aria-label="Advertisement">Ad Space</div>
+
+    <script>
+        // Ad dismissal script
+        const dismissButton = document.getElementById('dismissAdButton');
+        if (dismissButton) {
+            dismissButton.addEventListener('click', function() {
+                const adBannerLeft = document.getElementById('adBannerLeft');
+                if (adBannerLeft) {
+                    adBannerLeft.classList.add('hidden');
+                }
+            });
+        }
+
+        // Placeholder for theme toggle or other JS from script.js
+        const themeToggleButton = document.getElementById('theme-toggle');
+        if (themeToggleButton) {
+             themeToggleButton.textContent = ''; // Example
+             // Add theme toggle logic here
+        }
+    </script>
+</body>
+</html>

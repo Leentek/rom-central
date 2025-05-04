@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>PCSX2 - PlayStation 2 (PS2) Emulator Setup Guide (PC) | ROM Central</title>
+    <meta name="description" content="Download and set up PCSX2, the leading open-source PlayStation 2 (PS2) emulator for PC (Windows, Linux, Mac). Requires PS2 BIOS file.">
+    <meta name="keywords" content="PCSX2 download, PS2 emulator PC, PlayStation 2 emulator, PCSX2 setup, PCSX2 BIOS, play PS2 games PC, PCSX2 nightly, PCSX2 settings, AVX2">
+
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="YOUR_PCSX2_PAGE_URL"> <meta property="og:title" content="PCSX2 - PlayStation 2 (PS2) Emulator Setup Guide (PC) | ROM Central">
+    <meta property="og:description" content="Comprehensive guide to installing and configuring the PCSX2 emulator on Windows, Linux, and macOS for playing PS2 games. BIOS file required.">
+    <meta property="og:image" content="YOUR_PCSX2_PREVIEW_IMAGE.jpg"> <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="YOUR_PCSX2_PAGE_URL"> <meta property="twitter:title" content="PCSX2 - PlayStation 2 (PS2) Emulator Setup Guide (PC) | ROM Central">
+    <meta property="twitter:description" content="Comprehensive guide to installing and configuring the PCSX2 emulator on Windows, Linux, and macOS for playing PS2 games. BIOS file required.">
+    <meta property="twitter:image" content="YOUR_PCSX2_PREVIEW_IMAGE.jpg"> <link rel="canonical" href="YOUR_PCSX2_PAGE_URL"> <link rel="icon" href="/favicon.ico" type="image/x-icon"> <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "HowTo",
+      "name": "Install and Set Up PCSX2 (PlayStation 2 Emulator for PC)",
+      "description": "Guide to installing PCSX2 on Windows, Linux, or macOS, including BIOS setup, configuration, and loading games.",
+      "step": [
+        {
+          "@type": "HowToStep",
+          "name": "Obtain Requirements",
+           "itemListElement": [
+             {"@type": "HowToStep", "name": "Download PCSX2", "text": "Get the latest Stable or Nightly build for your OS (Windows, Linux, macOS) from the official PCSX2 website (pcsx2.net). Nightly builds have the latest updates.", "url": "YOUR_PCSX2_PAGE_URL#pc-installation"},
+             {"@type": "HowToStep", "name": "Obtain PS2 BIOS Files", "text": "PCSX2 REQUIRES PlayStation 2 BIOS files (e.g., 'SCPH-39001.bin', etc.). You must legally obtain these from your own PS2 console."}
+           ]
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Install / Extract PCSX2",
+          "text": "Run the installer (Windows) or extract the archive (Linux/macOS) to a chosen location."
+        },
+        {
+           "@type": "HowToStep",
+           "name": "Place BIOS Files",
+            "text": "Place your legally obtained PS2 BIOS files (.bin, .rom, etc.) into the 'bios' subfolder within your PCSX2 user data directory (e.g., Documents/PCSX2/bios on Windows, ~/.config/PCSX2/bios on Linux)."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Run & Initial Setup",
+          "text": "Launch PCSX2. A first-time setup wizard will guide you through selecting Language, Theme, confirming the BIOS path/selecting a BIOS version, and setting up your Game Directories (where your PS2 ISO/CHD files are stored)."
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Configure Settings",
+          "text": "Access 'Settings' from the main menu. Key areas:",
+           "itemListElement": [
+            {"@type": "HowToStep", "name": "Graphics > Display:", "text": "Choose Renderer (Vulkan/D3D11/OpenGL recommended), Aspect Ratio, VSync."},
+            {"@type": "HowToStep", "name": "Graphics > Rendering:", "text": "Set Internal Resolution (e.g., 3x for 1080p), Texture Filtering, Anisotropic Filtering."},
+            {"@type": "HowToStep", "name": "Controllers:", "text": "Select 'Controller Port 1' > 'DualShock 2'. Choose your device and use 'Automatic Mapping' or 'Manual Mapping' for your gamepad/keyboard."},
+            {"@type": "HowToStep", "name": "Memory Cards:", "text": "Create or manage virtual memory card files."},
+             {"@type": "HowToStep", "name": "System > Emulation Settings:", "text": "Adjust Speedhacks (EE Cyclerate, etc.) if needed for performance, but start with defaults."}
+           ]
+        },
+        {
+          "@type": "HowToStep",
+          "name": "Load Game",
+          "text": "Your games should appear in the Game List if directories were added correctly. Double-click a game, or use 'System' > 'Boot ISO' to manually select an ISO/CHD file."
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="styles.css"> <script defer src="script.js"></script> <style>
+        /* Using refined styles, PS2 blue theme */
+        html, body { height: 100%; margin: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; }
+        header { /* Add header styles if needed from styles.css */ }
+        nav { /* Add nav styles if needed from styles.css */ }
+        nav ul { list-style: none; padding: 0; margin: 0; text-align: center; /* Example */ /* Add more nav styles */ }
+        nav li { display: inline-block; /* Example */ margin: 0 15px; /* Example */ /* Add more nav styles */ }
+        nav a { text-decoration: none; color: #007bff; /* Example */ /* Add nav link styles */ }
+        nav a:hover, nav a[aria-current="page"] { text-decoration: underline; font-weight: bold; /* Example */ }
+
+        main { padding: 20px; max-width: 1200px; margin: 0 auto; padding-bottom: 80px; /* Ensure footer doesn't overlap content */ }
+        h1 { color: #3d6ae1; /* PS2 Blue */ text-align: center; margin-bottom: 30px; font-size: 2.2em; }
+        h2 { color: #333; border-bottom: 2px solid #3d6ae1; /* PS2 Blue */ padding-bottom: 5px; margin-top: 40px; }
+        section { margin-bottom: 50px; background: #f9f9f9; padding: 20px; border-radius: 8px; box-shadow: 0 2px 5px rgba(0,0,0,0.1); }
+        .important-note { background-color: #fff3cd; border-left: 5px solid #ffeeba; padding: 10px; margin-bottom: 20px; } /* Style for BIOS note */
+        .build-note { background-color: #d1ecf1; border-left: 5px solid #bee5eb; padding: 10px; margin-bottom: 20px; } /* Style for build note */
+         .video-container { position: relative; padding-bottom: 56.25%; /* 16:9 */ height: 0; overflow: hidden; max-width: 100%; background: #000; margin: 20px auto; }
+        .video-container iframe { position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: 0; }
+        .download-button { display: inline-block; background-color: #3d6ae1; /* PS2 Blue */ color: white; padding: 12px 25px; text-decoration: none; border-radius: 5px; font-weight: bold; margin-top: 15px; transition: background-color 0.3s; border: none; cursor: pointer; }
+        .download-button:hover { background-color: #2a52be; /* Darker PS2 Blue */ }
+        ol { padding-left: 20px; }
+        li { margin-bottom: 10px; }
+        #faq h3 { margin-top: 25px; color: #444; }
+
+        footer { background-color: #333; color: white; text-align: center; padding: 15px 10px; position: relative; bottom: 0; width: 100%; margin-top: 40px; box-sizing: border-box; }
+        .footer-links { margin-bottom: 10px; }
+        .footer-links a { color: #fff; margin: 0 10px; text-decoration: none; }
+        .footer-links a:hover { text-decoration: underline; }
+
+        .ad-banner-left, .ad-banner-right { position: fixed; background-color: #333; color: white; padding: 10px; font-size: 1.2em; border-radius: 8px; z-index: 1000; box-shadow: 0 2px 4px rgba(0,0,0,0.2); }
+        .ad-banner-left { bottom: 20px; left: 20px; writing-mode: vertical-rl; transform: rotate(180deg); }
+        #adBannerLeft button { position: absolute; top: -5px; right: -25px; background: #555; color: white; border: none; border-radius: 50%; cursor: pointer; font-size: 0.8em; width: 20px; height: 20px; line-height: 20px; text-align: center; transform: rotate(180deg); writing-mode: horizontal-tb; }
+        .ad-banner-right { bottom: 20px; right: 20px; }
+        .hidden { display: none !important; }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html" class="logo-container" aria-label="ROM Central Home">
+            <img src="logo.png" alt="ROM Central Logo" class="logo"> </a>
+        <button id="theme-toggle" aria-label="Toggle theme"></button>
+    </header>
+
+    <nav aria-label="Main navigation">
+        <ul>
+            <li><a href="roms.html">ROMs</a></li>
+            <li><a href="emulators.html" aria-current="page">Emulators</a></li> <li><a href="bios.html">Mobile Games</a></li>
+            <li><a href="rom-packs.html">ROM Packs</a></li>
+        </ul>
+    </nav>
+
+    <main>
+        <h1>PCSX2 - PlayStation 2 Emulator Setup Guide (PC)</h1>
+
+         <div class="important-note">
+            <strong>BIOS Required:</strong> PCSX2 <strong>requires PlayStation 2 BIOS files</strong> to function. You must legally obtain these from your own PS2 console (e.g., <code>SCPH-39001.bin</code>, <code>SCPH-70012.bin</code>). Place them in the 'bios' folder within your PCSX2 user directory.
+        </div>
+         <div class="build-note">
+            <strong>Note:</strong> PCSX2 offers Stable releases and frequent Nightly builds. Nightly builds contain the latest improvements and bug fixes and are generally recommended for most users. This guide assumes you are using a recent version (1.7+ with the Qt interface).
+        </div>
+
+
+        <section id="pc-installation">
+            <h2>PC Setup Guide (Windows, Linux, macOS)</h2>
+             <p>PCSX2 is the primary emulator for playing PlayStation 2 games on desktop computers. It requires a fairly powerful PC for optimal performance.</p>
+            <div class="video-container">
+                <iframe width="560" height="315" src="ACTUAL_YOUTUBE_EMBED_URL_PCSX2_PC" title="PCSX2 PC Installation & Setup Tutorial (Modern Qt Version)" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+            <ol>
+                <li><strong>Download PCSX2</strong> - Visit the official PCSX2 website (pcsx2.net). Download the latest **Nightly build** (recommended) or Stable release for your operating system (Windows, Linux, macOS).</li>
+                <li><strong>Install / Extract</strong> - Run the installer if provided (Windows), or extract the downloaded archive (`.7z`, `.AppImage`, `.dmg`) to a suitable folder.</li>
+                <li><strong>Obtain & Place BIOS</strong> - Legally dump the BIOS files from your own PS2 console. Locate the PCSX2 user data directory (often `Documents\PCSX2` on Windows, `~/.config/PCSX2` on Linux, `~/Library/Application Support/PCSX2` on macOS). Inside this directory, find or create a `bios` subfolder and place your BIOS files (e.g., `SCPH-39001.bin`) there.</li>
+                <li><strong>Run & First-Time Setup</strong> - Launch PCSX2. The first-time setup wizard will guide you:
+                     <ul>
+                        <li>Select Language and Theme.</li>
+                        <li>Confirm the path to your BIOS folder and select the desired BIOS version from the list.</li>
+                        <li>Click `Add` under Game Directories and select the folder(s) where you keep your PS2 game images (ISO, CSO, CHD, GZ).</li>
+                     </ul>
+                </li>
+                 <li><strong>Configure Settings</strong> - Access the main settings via the `Settings` menu:
+                     <ul>
+                        <li>`Graphics` > `Display`: Choose your preferred `Renderer` (Vulkan, Direct3D 11, OpenGL recommended), set `Aspect Ratio`, enable `VSync`.</li>
+                        <li>`Graphics` > `Rendering`: Set `Internal Resolution` (e.g., `3x Native ~ 1080p`), adjust `Texture Filtering` and `Anisotropic Filtering`.</li>
+                        <li>`Controllers` > `Controller Port 1` > `DualShock 2`: Select your `Controller Type`. Choose your physical device (gamepad/keyboard) from the dropdown and use `Automatic Mapping` or configure manually.</li>
+                        <li>`Memory Cards`: Create new virtual memory card files or assign existing ones using the `Create` or `Use Selected File` buttons.</li>
+                        <li>`System` > `Emulation Settings`: Adjust `Speedhacks` (like EE Cyclerate) only if experiencing performance issues; default settings are usually best to start.</li>
+                     </ul>
+                 </li>
+                <li><strong>Load Game</strong> - Your games should appear in the main window's Game List. Double-click a game title to start it. Alternatively, use `System` > `Boot ISO` to browse for and launch a game image file directly.</li>
+            </ol>
+            <p><strong>System Requirements (PC):</strong> Demanding. A CPU with **AVX2 instruction set support** (Intel Haswell / AMD Ryzen or newer) is highly recommended for performance. A mid-range modern dedicated GPU (supporting Vulkan, D3D11+, or OpenGL 3+) is needed for upscaling and good speeds. 8GB+ RAM recommended.</p>
+            <a href="https://pcsx2.net/" class="download-button" id="pcsx2-pc-download">Download PCSX2 for PC</a> </section>
+
+        <section id="faq">
+            <h2>Frequently Asked Questions</h2>
+            <h3>Should I use Stable or Nightly builds of PCSX2?</h3>
+            <p>Nightly builds contain the very latest code changes, bug fixes, and performance improvements. While potentially less tested than Stable releases, they are generally recommended for the best experience and compatibility with the newest features.</p>
+
+            <h3>Is the PS2 BIOS file really mandatory?</h3>
+            <p>Yes. PCSX2 requires official PlayStation 2 BIOS files, legally dumped from your own console hardware, to function correctly. Different BIOS versions may offer slightly different compatibility.</p>
+
+            <h3>Why are the system requirements for PCSX2 so high? Why is AVX2 important?</h3>
+            <p>The PlayStation 2 had complex custom hardware (Emotion Engine CPU, Graphics Synthesizer GPU). Emulating this accurately requires significant processing power. Modern PCSX2 versions heavily utilize AVX2 instructions on CPUs that support them, leading to substantial performance gains compared to older CPUs without AVX2.</p>
+
+             <h3>What's the best Graphics Renderer (Vulkan, D3D11, OpenGL)?</h3>
+             <p>Performance varies by system hardware and drivers. **Vulkan** often provides the best performance on compatible AMD and Nvidia GPUs. **Direct3D 11** is a solid choice for Windows users. **OpenGL** is widely compatible but might be slightly slower on some hardware. Experiment to see which works best for you.</p>
+
+            <h3>What are Speedhacks and should I use them?</h3>
+            <p>Speedhacks (found in Emulation Settings) are options like altering the EE Cyclerate or VU Cycle Stealing. They can increase performance on weaker systems but may also introduce bugs, instability, or break games. It's recommended to start with default settings (Speedhacks disabled or at safe presets) and only adjust them if necessary.</p>
+
+            <h3>How do Memory Cards work in PCSX2?</h3>
+            <p>PCSX2 uses virtual memory card files (usually `.ps2` format) stored on your computer. You can create multiple cards via the Memory Card settings menu, allowing you to manage saves just like on a real PS2. Make sure a card is assigned to Slot 1 to save progress in most games.</p>
+
+             <h3>Is there a good PS2 emulator for Android?</h3>
+             <p>AetherSX2 was a popular PS2 emulator for Android based on PCSX2, but its development has been discontinued, and it was removed from the Play Store. Users must find older, trusted APKs from archive sources if they wish to use it. It requires a very powerful Android device.</p>
+        </section>
+    </main>
+
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+        </div>
+        <p>&copy; 2025 ROM Central.</p>
+    </footer>
+
+    <div id="adBannerLeft">
+        <button id="dismissAdButton" aria-label="Dismiss ad">X</button>
+        <div class="ad-banner-left">Vertical Ad Space</div>
+    </div>
+    <div class="ad-banner-right" aria-label="Advertisement">Ad Space</div>
+
+    <script>
+        // Ad dismissal script
+        const dismissButton = document.getElementById('dismissAdButton');
+        if (dismissButton) {
+            dismissButton.addEventListener('click', function() {
+                const adBannerLeft = document.getElementById('adBannerLeft');
+                if (adBannerLeft) {
+                    adBannerLeft.classList.add('hidden');
+                }
+            });
+        }
+
+        // Placeholder for theme toggle or other JS from script.js
+        const themeToggleButton = document.getElementById('theme-toggle');
+        if (themeToggleButton) {
+             themeToggleButton.textContent = ''; // Example
+             // Add theme toggle logic here
+        }
+    </script>
+</body>
+</html>

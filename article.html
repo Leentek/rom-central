@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog Post - ROM Central</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <style>
+        /* Blurred background styles */
+        .blurred-background {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            filter: blur(10px);
+            z-index: -1;
+            opacity: 0.6;
+            transform: scale(1.1);
+            background-color: #f5f5f5; /* Fallback color */
+            background-image: linear-gradient(to bottom, #f5f5f5, #e0e0e0); /* Fallback gradient */
+        }
+
+        /* Semi-transparent overlay for better readability */
+        body::after {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.6);
+            z-index: -1;
+        }
+
+        /* Basic styles for article layout */
+        .article-container {
+            max-width: 900px;
+            margin: 25px auto;
+            padding: 0 20px;
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .article-content img {
+            max-width: 100%;
+            height: auto;
+            margin: 15px 0;
+            border-radius: 4px;
+        }
+        /* Style embedded videos */
+        .article-content iframe {
+            max-width: 100%;
+            margin: 15px 0;
+            aspect-ratio: 16 / 9;
+            height: auto;
+        }
+        .article-header {
+            padding: 25px 20px 15px; /* Added more top padding */
+            margin-bottom: 10px;
+        }
+        
+        .article-header h1 {
+            font-size: 2.2em; /* Slightly larger */
+            margin-bottom: 15px; /* Increased from 10px */
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(0,0,0,0.1); /* Subtle separator */
+            line-height: 1.3; /* Better line spacing */
+        }
+        
+        .article-meta {
+            font-size: 0.9em;
+            color: #666;
+            margin: 15px 0 25px; /* More vertical spacing */
+            padding-bottom: 15px; /* Increased from 10px */
+            border-bottom: 1px solid rgba(0,0,0,0.08); /* Lighter border */
+        }
+        
+        .article-body {
+            padding: 0 20px 20px; /* Added horizontal padding */
+            line-height: 1.7;
+            font-size: 1.1em;
+        }
+        .recommended-section {
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+        .recommended-section h2 {
+            margin-bottom: 20px;
+        }
+        .recommended-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+        }
+        .recommended-item {
+            border: 1px solid #ddd;
+            padding: 10px;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .recommended-item img.thumbnail {
+            max-width: 100%;
+            height: 120px;
+            object-fit: cover;
+            margin-bottom: 8px;
+            border-radius: 3px;
+        }
+        .recommended-item h3 {
+            font-size: 1em;
+            margin-top: 0;
+            margin-bottom: 5px;
+        }
+        .recommended-item a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .recommended-item a:hover h3 {
+            color: #3498db;
+        }
+
+        /* Ad styles */
+        .ad-banner {
+            background-color: #f0f0f0;
+            border: 1px dashed #ccc;
+            padding: 20px;
+            text-align: center;
+            margin: 25px 0;
+            min-height: 90px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.1em;
+            color: #888;
+        }
+        .ad-banner-in-article {
+            margin: 20px auto;
+            max-width: 500px;
+            min-height: 100px;
+        }
+			    .footer-links {
+            margin-bottom: 15px;
+        }
+        .footer-links a {
+            color: #fff;
+            margin: 0 10px;
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="blurred-background"></div>
+    
+    <header>
+        <a href="index.html" class="logo-container">
+            <img src="logo.png" alt="ROM Central Logo" class="logo">
+        </a>
+        <button id="theme-toggle"></button>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="roms.html">ROMs</a></li>
+            <li><a href="emulators.html">Emulators</a></li>
+            <li><a href="bios.html">Mobile Games</a></li>
+            <li><a href="rom-packs.html">ROM Packs</a></li>
+            <li><a href="blog.html">Blog</a></li>
+        </ul>
+    </nav>
+
+    <div class="article-container">
+        <article id="article-content">
+            <p>Loading article...</p>
+        </article>
+
+        <div class="ad-banner">(Ad Banner - e.g., 468x60 or Responsive)</div>
+
+        <section class="recommended-section">
+            <h2>Recommended For You</h2>
+            <div id="recommended-posts" class="recommended-list">
+                <p>Loading recommendations...</p>
+            </div>
+        </section>
+
+        <div class="ad-banner">(Ad Banner - e.g., Leaderboard or Responsive)</div>
+    </div>
+
+    <footer>
+        <div class="footer-links">
+            <a href="terms.html">Terms of Service</a> | 
+            <a href="contact-us.html">Contact Us</a>
+        </div>
+        </div>
+        <p>&copy; 2025 ROM Central.</p>
+    </footer>
+
+    <script>
+        const API_BASE_URL = 'http://localhost:3000';
+        let currentArticleId = null;
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const urlParams = new URLSearchParams(window.location.search);
+            const articleId = urlParams.get('id');
+
+            if (articleId) {
+                currentArticleId = articleId;
+                fetchArticle(articleId);
+                fetchRecommendedPosts(articleId);
+            } else {
+                document.getElementById('article-content').innerHTML = '<h1>Error</h1><p>No article ID provided.</p>';
+                document.getElementById('recommended-posts').innerHTML = '';
+            }
+        });
+
+        async function fetchArticle(id) {
+            try {
+                const response = await fetch(`${API_BASE_URL}/blog-posts/${id}`);
+                if (!response.ok) {
+                    if(response.status === 404) throw new Error("Article not found.");
+                    throw new Error(`HTTP error! status: ${response.status}`);
+                }
+                const post = await response.json();
+
+                // Preload image for blurred background
+                if (post.image) {
+                    const img = new Image();
+                    img.src = post.image;
+                    img.onload = () => displayArticle(post);
+                } else {
+                    displayArticle(post);
+                }
+
+            } catch (error) {
+                console.error("Error fetching article:", error);
+                document.getElementById('article-content').innerHTML = `<h1>Error</h1><p>Could not load article: ${error.message}</p>`;
+            }
+        }
+
+        function displayArticle(post) {
+            const container = document.getElementById('article-content');
+            if (!container) return;
+
+            // Set page title
+            document.title = `${post.title || 'Blog Post'} - ROM Central`;
+
+            // Set blurred background if image exists
+            if (post.image) {
+                const blurredBg = document.querySelector('.blurred-background');
+                if (blurredBg) {
+                    blurredBg.style.backgroundImage = `url('${post.image}')`;
+                }
+            }
+
+            const postDate = post.createdAt ? new Date(post.createdAt).toLocaleDateString() : 'Unknown date';
+            const author = post.author || 'Unknown author';
+
+            let bodyContent = (post.content || 'Article content is unavailable.').replace(/\n/g, '<br>');
+
+            let imageHtml = '';
+            if (post.image) {
+                imageHtml = `<img src="${post.image}" alt="${post.title || 'Article image'}" style="max-width: 100%; height: auto; margin-bottom: 15px;">`;
+            }
+
+            let videoHtml = '';
+            if (post.video) {
+                const videoId = extractYouTubeId(post.video);
+                if (videoId) {
+                    videoHtml = `
+                        <div class="post-video-container" style="margin-top: 20px;">
+                           <iframe width="560" height="315" src="https://www.youtube.com/embed/${videoId}" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                        </div>
+                    `;
+                }
+            }
+
+            container.innerHTML = `
+                <div class="article-header">
+                    <h1>${post.title || 'Untitled Post'}</h1>
+                    <div class="article-meta">
+                        By ${author} on ${postDate}
+                    </div>
+                    ${imageHtml}
+                </div>
+                <div class="article-body">
+                    ${bodyContent}
+                </div>
+                ${videoHtml}`;
+        }
+
+        function extractYouTubeId(url) {
+            if (!url) return null;
+            const regExp = /^.*(?:(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/|shorts\/|watch\?v=)|(?:youtu\.be\/|v\/|vi\/|u\/\w\/|embed\/|shorts\/|watch\?.*[&?]v=))([^#&?]*).*/;
+            const match = url.match(regExp);
+            return (match && match[1] && match[1].length === 11) ? match[1] : null;
+        }
+
+        async function fetchRecommendedPosts(excludeId) {
+            try {
+                const response = await fetch(`${API_BASE_URL}/blog-posts?limit=5`);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+
+                const data = await response.json();
+                let posts = data.posts || [];
+                if (!Array.isArray(posts)) {
+                    throw new Error("Invalid recommended posts data format");
+                }
+
+                const recommended = posts.filter(post => post.id != excludeId).slice(0, 3);
+                displayRecommended(recommended);
+
+            } catch (error) {
+                console.error("Error fetching recommended posts:", error);
+                document.getElementById('recommended-posts').innerHTML = `<p>Could not load recommendations: ${error.message}</p>`;
+            }
+        }
+
+        function displayRecommended(posts) {
+            const container = document.getElementById('recommended-posts');
+            if (!container) return;
+
+            container.innerHTML = posts.length === 0 ? "<p>No recommendations available.</p>" : "";
+
+            posts.forEach(post => {
+                const item = document.createElement('div');
+                item.classList.add('recommended-item');
+
+                let imageHtml = '';
+                if (post.image) {
+                    imageHtml = `<img src="${post.image}" alt="${post.title || 'Post image'}" class="thumbnail" onerror="this.style.display='none'">`;
+                }
+
+                item.innerHTML = `
+                    <a href="article.html?id=${post.id}">
+                        ${imageHtml}
+                        <h3>${post.title || 'Untitled Post'}</h3>
+                    </a>
+                `;
+                container.appendChild(item);
+            });
+        }
+    </script>
+</body>
+</html>
